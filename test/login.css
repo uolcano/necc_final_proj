@@ -1,0 +1,115 @@
+html, body, .m-login {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.m-login {
+	overflow: hidden;
+}
+.m-login .g-mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.8;
+	/* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; */
+	filter: alpha(opacity=80);
+}
+.m-login .g-login {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 387px;
+	height: 288px;
+	box-sizing: border-box;
+	margin: -144px 0 0 -193px;
+	padding: 30px 0 0 30px;
+	background-color: #fff;
+	z-index: 9;
+}
+.m-login .fldset {
+	position: relative;
+	margin: 0;
+	border: none;
+}
+.m-login .title {
+	margin: 0 0 20px 0;
+	padding: 0;
+	text-align: left;
+	font-size: 18px;
+	font: 18px/1.5 "Microsoft YaHei", monospace;
+	color: #444;
+}
+.m-login .txt {
+	width: 293px;
+	height: 43px;
+	margin: 0 0 15px 0;
+	padding: 9px;
+	box-sizing: border-box;
+	border: 1px solid #dfdfdf;
+	font: 16px/1.75 "Microsoft YaHei", monospace;
+	box-shadow: inset 2.828px 2.828px 0 0 #f1f1f1;
+	background-color: #fafafa;
+}
+.m-login .errmsg {
+	position: absolute;
+	box-sizing: border-box;
+	padding: 10px;
+	height: 50px;
+	box-shadow: 0 1px 1px 1px #aaa;
+	border: 1px solid #aaa\0;
+	border-radius: 3px;
+	font: 16px/1 "Microsoft YaHei", monospace;
+	z-index: 9;
+	color: #f33;
+	background-color: #fafafa;
+}
+.m-login .errmsg:before {
+	content: '';
+	display: block;
+	position: relative;
+	top: -15px;
+	z-index: 99;
+	width: 10px;
+	height: 5px;
+	box-sizing: border-box;
+	border-top: 0 solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #bcbcbc;
+	border-left: 5px solid transparent;
+}
+.m-login #usrname+.errmsg {
+	top: 100px;
+	top: 94px\0;
+}
+.m-login #password+.errmsg {
+	top: 158px;
+	top: 152px\0;
+}
+.m-login #submit {
+	width: 295px;
+	height: 48px;
+	border: none;
+	color: #fff;
+	font: 16px/1.2 "Microsoft YaHei", monospace;
+	background: url(../lib/img/sprites/icon.png) no-repeat 0 0;
+}
+.m-login .cnclicon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 23px;
+	height: 22px;
+	border: none;
+	background: url(../lib/img/sprites/icon.png) no-repeat -272px -48px;
+	opacity: 0.5;
+}
+.m-login .cnclicon:hover {
+	opacity: 1;
+}
+.m-login #submit.disabled {
+	background-color: #ececec;
+}

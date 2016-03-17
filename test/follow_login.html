@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>follow and login test</title>
+	<link rel="stylesheet" href="./login.css">
+	<style type="text/css">
+	.testpara {
+		font-size: 18px;
+		line-height: 3;
+		height: 1000px;
+	}
+	</style>
+	<!--[if lte IE 8]>
+		<script src="../lib/js/polyfill.min.js"></script>
+	<![endif]-->
+	<script src="../lib/js/md5.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="g-top">
+		<div class="m-nav f-fltclr f-center">
+			<div class="u-logo">
+				<span class="en">EDU</span><span class="vbar"></span><span class="zh toplogo">网易教育产品部</span>
+			</div>
+			<div class="u-flw">
+				<span class="btn unflw f-cursor">关注</span>
+				<span class="btn flwed" style="display:none;"><span class="txt">已关注</span><span class="vbar"></span><span class="cncl f-cursor">取消</span></span>
+				<span class="flwnum">粉丝 45</span>
+			</div>
+			<ul class="u-nav">
+				<li class="open"><a href="http://open.163.com/">网易公开课</a></li>
+				<li class="cloud"><a href="http://study.163.com/">云课堂</a></li>
+				<li class="mooc"><a href="http://www.icourse163.org/">中国大学MOOC</a></li>
+				<li class="srch f-cursor"></li>
+			</ul>
+		</div>
+	</div>
+	div.g-topnav>
+	<p class="testpara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam odio, mollitia iste, asperiores minus voluptatum pariatur dolor cumque qui consequatur culpa commodi voluptatibus iure provident quae, inventore dicta ratione corrupti cum alias explicabo voluptate reiciendis dolore vel atque? Eius aspernatur necessitatibus nemo doloremque deserunt laborum ad accusantium sapiente voluptatibus error, ipsum saepe inventore accusamus dolorem assumenda maiores. Non amet, mollitia, tempora eos error molestias aperiam maxime odit reprehenderit laboriosam in eius, quia quam repudiandae. Voluptatibus at doloremque ad saepe modi vel, vitae hic quisquam reprehenderit quas, deleniti nulla voluptate ea dignissimos doloribus eaque laudantium tempore recusandae delectus fugit, sit temporibus.</p>
+	<div class="m-login">
+		<div class="g-mask"></div>
+		<iframe src="" frameborder="0" id="frame" name="frame" style="display:none;"></iframe>
+		<form id="login" name="login" class="g-login" action="http://study.163.com/webDev/login.htm"
+		 method="get" target="frame" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8">
+			<fieldset class="fldset">
+				<legend class="title">登录网易云课堂</legend>
+				<input type="text" name="usrname" id="usrname" class="txt" placeholder="帐号" title="请输入您的账号" maxlength="28" autocomplete="off">
+				<div class="errmsg" style="display:none;"></div><!--  style="display:none;" -->
+				<input type="password" name="password" id="password" class="txt" placeholder="密码" title="请输入您的密码" maxlength="16">
+				<div class="errmsg" style="display:none;"></div>
+				<button id="submit">登录</button>
+			</fieldset>
+			<div class="cnclicon"></div>
+		</form>
+	</div>
+	<script src="./login.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

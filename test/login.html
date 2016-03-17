@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login test</title>
+	<link rel="stylesheet" href="./login.css">
+	<style type="text/css">
+	.testpara {
+		font-size: 18px;
+		line-height: 3;
+		height: 1000px;
+	}
+	</style>
+	<script src="../lib/js/md5.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="../lib/js/EventUtil.js" type="text/javascript" charset="utf-8"></script>-->
+	<!--<script src="https://cdn.rawgit.com/inexorabletash/polyfill/$TAGNAME/polyfill.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<!--[if lte IE 8]>
+		<script src="../lib/js/polyfill.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<p class="testpara">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam odio, mollitia iste, asperiores minus voluptatum pariatur dolor cumque qui consequatur culpa commodi voluptatibus iure provident quae, inventore dicta ratione corrupti cum alias explicabo voluptate reiciendis dolore vel atque? Eius aspernatur necessitatibus nemo doloremque deserunt laborum ad accusantium sapiente voluptatibus error, ipsum saepe inventore accusamus dolorem assumenda maiores. Non amet, mollitia, tempora eos error molestias aperiam maxime odit reprehenderit laboriosam in eius, quia quam repudiandae. Voluptatibus at doloremque ad saepe modi vel, vitae hic quisquam reprehenderit quas, deleniti nulla voluptate ea dignissimos doloribus eaque laudantium tempore recusandae delectus fugit, sit temporibus.</p>
+	<div class="m-login">
+		<div class="g-mask"></div>
+		<iframe src="" frameborder="0" id="frame" name="frame" style="display:none;"></iframe>
+		<form id="login" name="login" class="g-login" action="http://study.163.com/webDev/login.htm"
+		 method="get" target="frame" enctype="application/x-www-form-urlencoded" accept-charset="UTF-8">
+			<fieldset class="fldset">
+				<legend class="title">登录网易云课堂</legend>
+				<input type="text" name="usrname" id="usrname" class="txt" placeholder="帐号" title="请输入您的账号" maxlength="28" autocomplete="off">
+				<div class="errmsg" style="display:none;"></div><!--  style="display:none;" -->
+				<input type="password" name="password" id="password" class="txt" placeholder="密码" title="请输入您的密码" maxlength="16">
+				<div class="errmsg" style="display:none;"></div>
+				<button id="submit">登录</button>
+			</fieldset>
+			<div class="cnclicon"></div>
+		</form>
+	</div>
+	<script src="./login.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
