@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>video control bar</title>
+	<!--[if lte IE 8]>
+		<script src="../lib/js/polyfill.min.js"></script>
+	<![endif]-->
+	<script src="../lib/js/CompatUtil.js"></script>
+	<script src="../lib/js/VideoUtil.js"></script>
+	<link rel="stylesheet" href="video_control.css">
+	<style>
+	body {
+		width: 100%;
+		height: 100%;
+		background-color: #468;
+	}
+	</style>
+</head>
+<body>
+	<div class="vuj-vdowin">
+		<video class="vuj-vdosrc"></video>
+		<div class="vug-panel">
+			<div class="vuj-playctrl"><div class="vuz-paused"></div></div>
+			<div class="vug-timepass"><span class="vuj-crttime">00:00</span>/<span class="vuj-duration">00:00</span></div>
+			<div class="vuj-fullwin"></div>
+			<div class="vuj-sndvlm">
+				<div class="vuj-sndicon"><div class="vui-ldspkr"></div><div class="vui-sndvw1"></div><div class="vui-sndvw2"></div></div>
+				<div class="vuj-sndbar">
+					<div class="vuj-volume">
+						<div class="vuj-ptr"></div>
+					</div>
+				</div>
+			</div>
+			<div class="vuj-netwkinfo"></div>
+		</div>
+		<div class="vuj-ctrlbar vuz-hidden">
+			<div class="vuj-cache"></div>
+			<div class="vuj-progrs">
+				<div class="vuj-ptr"></div>
+			</div>
+		</div>
+	</div>
+	<script src="video_control.js"></script>
+</body>
+</html>

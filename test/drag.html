@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drag test</title>
+	<script src="../lib/js/DragUtil.js"></script>
+	<style>
+	#dragElm {
+		width: 100px;
+		height: 100px;
+		background-color: #efc;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+	<div id="dragElm"></div>
+	<script>
+	var elm = document.getElementById('dragElm');
+	elm.addEventListener('mousedown', DragUtil.dragUp);
+	elm.addEventListener('mousemove', DragUtil.dragMove);
+	elm.addEventListener('mouseup', DragUtil.dragDown);
+	elm.addEventListener('mouseleave', DragUtil.dragMiss);//鼠标离开元素时禁用拖拽
+	</script>
+</body>
+</html>

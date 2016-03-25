@@ -1,0 +1,685 @@
+/* @media screen and (min-width: 1364px) {
+	
+} */
+/**
+ * layout: 主介绍内容区
+ */
+.g-intros {
+	font-family: "Microsoft YaHei", monospace;
+}
+.g-intros .g-main {
+	float: left;
+}
+.g-intros .g-side {
+	float: right;
+}
+/* 超出显示省略号 */
+.g-intros .crsname, .g-intros .categ, .g-intros .lrncnt, .g-intros .price, .g-intros .provdr, .g-intros .title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/* 学习人数前的图标 */
+.g-intros .lrncnt:before {
+	content: '';
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	margin-right: 5px;
+	background: url(../lib/img/sprites/sprites.png) no-repeat -170px -88px;
+}
+.g-intros .crsname, .g-intros .title {
+	font-weight: 400;
+}
+
+/**
+ * layout: 课程内容区
+ */
+.g-main .u-tabs, .g-main .m-crscards {
+	float: left;
+}
+.g-main .m-pgselr {
+	float: right;
+	margin: 30px 20px 0 0;
+}
+
+/**
+ * unit: tab标签集
+ */
+.u-tabs {
+	margin: 0 0 30px 0;
+	box-shadow: 0 1px 1px 1px #d4d3d3;
+}
+.u-tabs .tab {
+	float: left;
+	width: 200px;
+	height: 50px;
+	text-align: center;
+	font-size: 20px;
+	line-height: 50px;
+	color: #666;
+	background-color: #fff;
+}
+.u-tabs .z-crt {
+	color: #fff;
+	background-color: #39a030;
+}
+
+/**
+ * module: 课程卡片组
+ */
+.m-crscards {
+	margin: -10px;/* 处理靠近四边的卡片多出来的10px外边距 */
+	width: 100%;
+}
+
+/**
+ * unit: 课程卡
+ */
+.u-card {
+	position: relative;/* 作为卡片浮层的参考父容器 */
+	float: left;
+	box-sizing: border-box;
+	width: 225px;
+	height: 228px;
+	margin: 10px;/* 每张卡片外边距10px */
+	padding: 0 5px;
+	font-size: 12px;
+	line-height: 1;
+	background-color: #fff;
+	box-shadow: 0 1px 1px 1px #e6e6e6;
+}
+.u-card .pic {
+	width: 223px;
+	height: 124px;
+	margin: 1px 0 0 -4px;
+	background-color: #acf;
+}
+.u-card .crsname {
+	margin: 10px 0 0 0;
+}
+.u-card .categ {
+	margin: 10px 0 0 0;
+	color: #999;
+}
+.u-card .lrncnt {
+	display: inline-block;
+	margin: 10px 0 0 0;
+	padding: 3px;
+	border: 1px solid #dddddd;
+	border-radius: 3px;
+	color: #999;
+}
+.u-card .price {
+	margin: 8px 0 0 0;
+	color: #ff3f00;
+}
+.u-card .price:before {
+	content: '￥';
+}
+.u-card:hover .u-popup {
+	display: block;
+}
+.u-card .u-popup * {
+	font-size: 12px;
+	color: #666;
+}
+
+/**
+ * unit: 卡片浮层;需要加载冗余的HTML结构，待优化
+ */
+.u-popup {
+	display: none;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	box-sizing: border-box;
+	width: 481px;
+	min-height: 238px;
+	z-index: 1;
+	letter-spacing: 1px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px 1px rgba(12, 4, 8, 0.5);
+}
+.u-popup .pic {
+	float: left;
+	margin: 11px 19px 0 11px;
+}
+.u-popup .crsname {
+	margin: 15px 10px 0 0;
+	font-size: 18px;
+}
+.u-popup .lrncnt {
+	margin: 0;
+	padding: 17px 0 0 4px;
+	border: none;
+}
+.u-popup .lrncnt:after {
+	content: '人在学';
+}
+.u-popup .provdr {
+	padding: 13px 0 0 4px;
+}
+.u-popup .provdr:before {
+	content: '发布者：';
+}
+.u-popup .categ {
+	margin: 0;
+	padding: 13px 0 0 4px;
+}
+.u-popup .categ:before {
+	content: '分类：';
+}
+.u-popup .descrip {
+	float: left;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 84px;
+	margin: 20px 0 0 0;
+	padding: 21px;
+	font-size: 14px;
+	line-height: 1.5;
+	background-color: #f8f8f8;
+}
+
+/**
+ * module: 选页器
+ */
+.m-pgselr .page {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+}
+.m-pgselr .page:hover {
+	color: #fff;
+	background-color: #9dd8b1;
+}
+.m-pgselr .prev, .m-pgselr .next {
+	width: 30px;
+	height: 20px;
+	background: url(../lib/img/sprites/sprites.png) no-repeat -62px -50px;
+}
+.m-pgselr .next {
+	background-position: -62px -70px;
+}
+.m-pgselr .z-crt {
+	color: #39a303;
+}
+/**
+ * status: 按钮效果
+ */
+.z-unclk {
+	box-shadow: 1px 1px 1px 1px #a6a6a6;
+}
+.z-clked {
+	box-shadow: inset 1px 1px 2px 1px #a6a6a6;
+}
+
+/**
+ * layout: 介绍内容区右侧边栏
+ */
+.g-side .m-orgintro, .g-side .m-rank {
+	width: 223px;
+	margin: 0 0 20px 0;
+	background-color: #fff;
+	box-shadow: 0 1px 1px 0 rgba(6, 0, 1, 0.2);
+}
+.g-side .title {
+	box-sizing: border-box;
+	height: 55px;
+	border-bottom: 1px solid #ddd;
+	font-size: 16px;
+	line-height: 1;
+}
+.g-side>*>* {
+	padding: 19px;
+}
+/**
+ * module: 结构介绍
+ */
+.m-orgintro .detail {
+	font-size: 14px;
+	color: #666;
+}
+.m-orgintro .u-poster {
+	width: 180px;
+	height: 110px;
+	margin: 10px 0 0 0 ;
+	background: url(../lib/img/poster/poster_small.jpg) no-repeat center;
+}
+/**
+ * unit: 视频播放按钮
+ */
+/* 加载图片作为视频播放按钮 */
+/* .u-playicon {
+	position: relative;
+	top: 30px;
+	left: 65px;
+	width: 46px;
+	height: 46px;
+	background: url(../lib/img/sprites/sprites.png) no-repeat -220px -50px;
+} */
+/* 绘制视频播放按钮 */
+.u-playicon {
+	position: relative;
+	top: 30px;
+	left: 68px;
+	box-sizing: border-box;
+	width: 44px;
+	height: 44px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+.u-playicon:before {
+	content: '';
+	display: block;;
+	position: absolute;
+	left: 15px;
+	top: 10px;
+	box-sizing: border-box;
+	width: 14px;
+	height: 18px;
+	border-top: 9px solid transparent;
+	border-right: 0 solid;
+	border-bottom: 9px solid transparent;
+	border-left: 14px solid #fff;
+}
+/**
+ * module: 最热排行
+ */
+.m-rank .rank {
+/* 	overflow: hidden;
+	max-height: 718px; */
+}
+.m-rank .outcntnr {/* 使得.incntnr在.rank的padding区域隐藏起来 */
+	max-height: 680px;
+	overflow: hidden;
+}
+.m-rank .incntnr {/* 套一层容器容纳第一个子项多出来的margin-top: 20px; */
+	max-height: 718px;
+	margin: -20px 0 0 0;
+	/* overflow: hidden; */
+}
+.m-rank .u-crsitm {
+	margin: 20px 0 0 0;
+}
+/**
+ * unit: 最热排行中的课程项
+ */
+.u-crsitm {
+	line-height: 1.2;
+}
+.u-crsitm .u-lnk {
+	display: block;
+}
+.u-crsitm .pic {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin: 0 12px 0 0;
+	background-color: #acf;
+}
+.u-crsitm .crsname {
+	font-size: 14px;
+}
+.u-crsitm .lrncnt {
+	margin: 12px 0 0 0;
+	color: #999;
+}
+
+
+/**
+ * module: 弹出视频模块
+ */
+.m-popvideo {
+	display: none;
+}
+.m-popvideo .u-fxwin {
+	width: 950px;
+	height: 676px;
+	margin: -338px 0 0 -475px;
+	padding: 30px;
+}
+.m-popvideo .title {
+	margin: 0 0 22px 0;
+	font: 18px/1 "Microsoft YaHei", monospace;
+	color: #444;
+}
+/* 视频模块关闭按钮 */
+.m-popvideo .u-cncl {
+	position: absolute;
+	top: 7px;
+	right: 7px;
+	width: 23px;
+	height: 22px;
+	border: none;
+	background: url(../lib/img/sprites/sprites.png) no-repeat -267px -50px;
+}
+/* video window */
+.vuj-vdowin {
+	position: relative;
+	line-height: 0;
+}
+/* target video */
+.vuj-vdowin .vuj-vdosrc {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-width: 889px;
+	min-height: 567px;
+	text-align: center;/* 用于IE下正确显示提示文本 */
+	font: 20px/567px "Microsoft YaHei", monospace;
+	color: #bbb;
+	background-color: #000;
+}
+/* big play icon */
+.vuj-vdowin .playicon {
+	position: absolute;
+	bottom: 90px;
+	left: 20px;
+	width: 60px;
+	height: 60px;
+	border-radius: 6px;
+	background: url(../lib/img/sprites/sprites.png) no-repeat -1px -50px #000;
+}
+/* panel platform */
+.vuj-vdowin .panel {
+	position: relative;
+	bottom: 32px;
+	width: 100%;
+	height: 40px;
+	background-color: #000;
+	background: url(../lib/img/sprites/sprites.png) repeat-x 0 -111px;
+}
+/* setting part */
+.vuj-vdowin .panel .setting {
+	width: 100%;
+	height: 30px;
+}
+/* play controller */
+.vuj-vdowin .vuj-playctrl {
+	float: left;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	padding: 8px;
+	border-right: 1px solid #292929;
+}
+.vuj-vdowin .vuz-running {
+	box-sizing: border-box;
+	width: 14px;
+	height: 14px;
+	border-right: 5px solid #999;
+	border-left: 5px solid #999;
+}
+.vuj-vdowin .vuz-paused {
+	box-sizing: border-box;
+	width: 14px;
+	height: 14px;
+	border-top: 7px solid transparent;
+	border-right: 0px solid;
+	border-bottom: 7px solid transparent;
+	border-left: 14px solid #999;
+}
+/* play time */
+.vuj-vdowin .vug-timepass {
+	float: left;
+	padding: 0 10px;
+	border-left: 1px solid #2e2e2e;
+	font: 12px/30px 'Microsoft Yahei', monospace;
+	color: #999;
+}
+/* video sharpness */
+.vuj-vdowin .sharp {
+	float: right;
+	width: 30px;
+	height: 18px;
+	margin: 5px 0;
+	border: 2px solid #666;
+	border-radius: 3px;
+	text-align: center;
+	font: 12px/18px 'Microsoft Yahei', monospace;
+	color: #999;
+}
+/* full window controller */
+.vuj-vdowin .vuj-fullwin {
+	float: right;
+	box-sizing: border-box;
+	width: 18px;
+	height: 14px;
+	margin: 8px 10px;
+	border: 2px dashed #999;
+}
+.vuj-vdowin .vuj-fullwin:hover {
+	box-sizing: border-box;
+	width: 27px;
+	height: 21px;
+	margin: 4.5px 5.5px;
+	border-width: 3px;
+}
+.vuj-vdowin.vuz-fulled {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	bottom: 50px;
+	right: 10px;
+	width: auto;
+	height: auto;
+	margin: 0;
+}
+/* middle bar */
+.vuj-vdowin .vbar {
+	float: right;
+	width: 0;
+	height: 30px;
+	border-right: 1px solid #292929;
+}
+/* nec icon */
+.vuj-vdowin .necicon {
+	float: right;
+	margin: 0 14px 0 0;
+	padding: 0 0 0 10px;
+	border-left: 1px solid #2e2e2e;
+	line-height: 30px;
+	font: bold 12px/30px 'Microsoft Yahei', monospace;
+	color: #ececec;
+}
+.vuj-vdowin .necicon:before {
+	content: '';
+	display: inline-block;
+	width: 13px;
+	height: 14px;
+	margin: 4px 3px;
+	vertical-align: -20%;
+	background: url(../lib/img/sprites/sprites.png) -156px -88px;
+}
+.vuj-vdowin .vuj-netwkinfo {
+	float: right;
+	width: 80px;
+	padding: 0 10px;
+	text-align: center;
+	line-height: 30px;
+	color: #999;
+}
+/* sound muted button */
+.vuj-vdowin .vuj-sndvlm {
+	position: relative;
+	float: right;
+	box-sizing: border-box;
+	height: 100%;
+	padding: 0 10px;
+	text-align: center;
+	line-height: 20px;
+	color: #999;
+}
+.vuj-sndvlm .vuj-sndicon {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 24px;
+	height: 20px;
+	margin: 2px 0;
+}
+.vuj-sndvlm .vuj-sndicon * {
+	display: inline-block;
+	position: relative;
+	top: 2px;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+.vuj-sndvlm .vui-ldspkr {
+	box-sizing: border-box;
+	width: 8px;
+	height: 18px;
+	border-top: 6px solid transparent;
+	border-right: 8px solid #999;
+	border-bottom: 6px solid transparent;
+	border-left: 0 solid;
+}
+.vuj-sndvlm .vui-ldspkr:before {
+	content: '';
+	display: inline-block;
+	position: relative;
+	top: -8px;
+	left: -2px;
+	box-sizing: border-box;
+	width: 4px;
+	height: 8px;
+	border: 3px solid #999;
+}
+.vuj-sndvlm .vui-sndvw1 {
+	display: none;
+	left: -1px;
+	width: 4px;
+	height: 8px;
+	border-radius: 0 5px 5px 0 / 0 10px 10px 0;
+	box-shadow: 2px 0 0 0 #999;
+}
+.vuj-sndvlm .vui-sndvw2 {
+	display: none;
+	width: 4px;
+	height: 16px;
+	border-radius: 0 5px 5px 0 / 0 10px 10px 0;
+	box-shadow: 2px 0 0 0 #999;
+}
+.vuj-sndvlm .vuz-muted .vui-ldspkr:after {
+	content: '/';
+	display: inline-block;
+	position: relative;
+	top: -27px;
+	left: -8px;
+	width: 24px;
+	height: 18px;
+	font: oblique bold 18px/1 'Microsoft Yahei', monospace;
+	color: #ccc;
+}
+.vuj-sndvlm .vuz-vlm1 .vui-sndvw1, .vuj-sndvlm .vuz-vlm2 .vui-sndvw1, .vuj-sndvlm .vuz-vlm2 .vui-sndvw2 {
+	display: inline-block;
+}
+/* sound control bar */
+.vuj-sndvlm .vuj-sndbar {
+	display: none;
+	position: absolute;
+	bottom: 20px;
+	left: 15px;
+	width: 10px;
+	height: 100px;
+	border: 2px solid #888;
+	border-radius: 10px;
+	background-color: #666;
+}
+.vuj-sndvlm .vuj-sndbar .vuj-volume {
+	position: absolute;
+	bottom: 0px;
+	height: 0%;
+	border-radius: 0 0 10px 10px;
+	background-color: #fa7;
+}
+.vuj-sndvlm .vuj-sndbar .vuj-ptr {
+	float: none;
+	margin: -5px 0;/* 同进度条里的指示器，但是这里是设置上下负的margin */
+}
+.vuj-vdowin .panel .vuj-ctrlbar {
+	position: relative;
+	height: 10px;
+	margin: 0;
+	background-color: #333;
+}
+/* show sound control bar */
+.vuj-sndvlm:hover .vuj-sndbar {
+	display: block;
+	animation: kf-showsndbar 1s 1;
+}
+@keyframes kf-showsndbar {
+	0% {opacity: 0; height: 0;}
+	100% {opacity: 1; height: 100px;}
+}
+/* progress controller */
+.vuj-ctrlbar .vuj-cache {
+	position: absolute;
+	height: 100%;
+	background-color: #555;
+}
+.vuj-ctrlbar .vuj-progrs {
+	position: absolute;
+	width: 0;
+	height: 100%;
+	background-color: #00a750;
+}
+.vuj-vdowin .vuj-ptr {
+	position: relative;
+	float: right;
+	margin: 0 -10px 0 0;/* 这里一定要设置负的margin，否则进度条的宽度会不准确 */
+	box-sizing: border-box;
+	width: 10px;
+	height: 10px;
+	box-shadow: inset -1px 1px 2px 0 #ececec, -1px 1px 3px 0 #000;
+	border-radius: 50%;
+	background-color: #aaa;
+	cursor: pointer;
+}
+
+.vuj-vdowin .vuz-draged {
+	background-color: #7fa;
+}
+
+
+
+
+/**
+ * unit: hover效果
+ */
+.u-hover {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.u-hover:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+
+/* test style */
+.g-intros {
+	margin-top: 100px;
+}
+.g-main {
+	/* box-sizing: border-box; */
+}
+@media screen and (max-width: 1611px) {
+	.g-main {
+		width: 735px;
+	}
+}
+@media screen and (min-width: 1612px) {
+	.g-main {
+		width: 980px;
+	}
+}
+/* .g-main .m-pgselr, */
+.g-side {
+	/* display: none; */
+}

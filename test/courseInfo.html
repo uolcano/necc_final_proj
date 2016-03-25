@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>course introduction video</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="../lib/css/reset.css">
+	<link rel="stylesheet" href="./follow_login.css">
+	<link rel="stylesheet" href="./courseInfo.css">
+	<!--[if lte IE 8]>
+		<script src="../lib/js/polyfill.min.js"></script>
+	<![endif]-->
+	<script src="../lib/js/CompatUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../lib/js/VideoUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../lib/js/CookieUtil.js"></script>
+	<script src="../lib/js/ComUtil.js"></script>
+	<style>
+
+	</style>
+</head>
+<body>
+	<script id="track-crsinfo" class="tuj-tmplt" data-tmplt-name="crsInfo" type="text/template">
+		<div class="u-card" data-crsid="${track.id}">
+			<a class="lnk u-lnk">
+				<div class="pic" style="background:url(${track.middlePhotoUrl}) no-repeat center;"></div>
+				<h1 class="crsname">${track.name}</h1>
+				<div class="categ">${track.categoryName}</div>
+				<div class="lrncnt">${track.learnerCount}</div>
+				<div class="price">${track.price}</div>
+				<div class="provdr">${track.provider}</div>
+				<div class="descrip">${track.description}</div>
+			</a>
+		</div>
+	</script>
+	<div class="g-intros f-center f-fltclr">
+		<div class="g-main">
+			<div class="u-tabs tuj-tabs j-tabs">
+				<div class="tab tuz-crt z-crt" data-type="10">产品设计</div>
+				<div class="tab" data-type="20">编程语言</div>
+			</div>
+			<div class="m-crscards tuj-cards j-crscards" data-cards-num="20"></div>
+			<div class="m-pgselr tuj-pgselr j-pgselr">
+				<div class="page prev"></div>
+				<div class="page pg1 tuz-crt" data-page-no="1">1</div>
+				<div class="page pg2" data-page-no="2">2</div>
+				<div class="page pg3" data-page-no="3">3</div>
+				<div class="page pg4" data-page-no="4">4</div>
+				<div class="page pg5" data-page-no="5">5</div>
+				<div class="page pg6" data-page-no="6">6</div>
+				<div class="page pg7" data-page-no="7">7</div>
+				<div class="page pg8" data-page-no="8">8</div>
+				<div class="page next"></div>
+			</div>
+		</div>
+	</div>
+	<script src="courseInfo.js"></script>
+</body>
+</html>
+<!-- 				<div class="u-card">
+					<a href="" class="lnk u-lnk">
+						<div class="pic"></div>
+						<h1 class="crsname">手绘画系列教程手绘画系列教程手绘画系列教程手绘画系列教程</h1>
+						<div class="categ">手绘设计</div>
+						<div class="lrncnt">21567</div>
+						<div class="price">800</div>
+						<div class="provdr">几分钟网</div>
+						<div class="descrip">生活中不乏有很多美好的画面，何不用画笔记录下来呢？那么就跟几分钟网一起来记录美好画面吧！</div>
+					</a>
+				</div> -->

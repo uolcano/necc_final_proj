@@ -1,0 +1,30 @@
+/* 链接尾部“>”特殊符号 */
+.u-lnktrl:after {
+	content: ' >';
+}
+.g-topmsg {
+	background-color: #f3f3f3;
+}
+.u-topmsg>* {
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+}
+.u-topmsg .msg {
+	float: left;
+}
+.u-topmsg .msgcls {
+	float: right;
+}
+.u-topmsg .lnk {
+	margin-left: 10px;
+	color: #21a557;
+}
+.u-topmsg .msgcls:before {
+	content: '';
+	display: inline-block;
+	margin-right: 6px;
+	width: 9px;
+	height: 9px;
+	background: url(../lib/img/sprites/opacity.png) no-repeat -48px -29px;
+}

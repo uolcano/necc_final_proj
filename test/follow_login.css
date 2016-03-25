@@ -1,20 +1,36 @@
 /* 部分区域水平居中 */
+body {
+	min-width: 1366px;
+	/* overflow-y: hidden; */
+}
+@media screen and (max-width:1611px) {
+	.f-center {
+		min-width: 960px;
+		margin: 0 203px;
+	}
+}
+@media screen and (min-width:1611px) {
+	.f-center {
+		display: table;
+		min-width: 1205px;
+		margin: 0 auto;
+	}
+}
 .f-center {
-	min-width: 963px;
-	max-width: 1210px;
-	margin: 0 203px;
+	/* margin: 0 203px; */
 }
 /* 清除浮动 */
 .f-fltclr:after {
 	content: '.';
 	display: block;
+	visibility: hidden;
 	clear: both;
+	/* width: 0; */
 	height: 0;
 	line-height: 0;
-	visibility: hidden;
 	overflow: hidden;
 }
-.u-btn, .u-cncl {
+.u-btn, .u-cncl, .u-slide .sldptr, .u-tabs .tab, .m-pgselr .page, .u-poster, .u-video .playicon, .u-video .run, .u-video .fullwin, .u-video .sharp, .u-video .sndclm, .u-video .ptr, .u-video .ctrlbar {
 	cursor: pointer;
 }
 .u-btn {
@@ -140,11 +156,9 @@
 /*
  * module: 登录模块
  */
-.g-mask, .g-login {
-	position: fixed;
-}
 /* 遮罩部分 */
-.m-login .g-mask {
+.u-mask {
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -153,17 +167,20 @@
 	opacity: 0.8;
 	filter: alpha(opacity=80);
 }
-/* 登录部分 */
-.m-login .g-login {
+.u-fxwin {
+	position: fixed;
 	top: 50%;
 	left: 50%;
+	box-sizing: border-box;
+	z-index: 9;
+	background-color: #fff;
+}
+/* 登录部分 */
+.m-login .g-login {
 	width: 387px;
 	height: 288px;
-	box-sizing: border-box;
 	margin: -144px 0 0 -193px;
 	padding: 30px 0 0 40px;
-	background-color: #fff;
-	z-index: 9;
 }
 
 .g-login .title {
@@ -203,9 +220,9 @@
 }
 .g-login .submit:hover {
 	opacity: 0.8;
-	/* filter: alpha(opacity=80); */
+	filter: alpha(opacity=80);
 }
-.g-login .cnclicon {
+.g-login .u-cncl {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -215,7 +232,7 @@
 	background: url(../lib/img/sprites/icon.png) no-repeat -272px -48px;
 	opacity: 0.5;
 }
-.g-login .cnclicon:hover {
+.g-login .u-cncl:hover {
 	opacity: 1;
 }
 .g-login .disabled {

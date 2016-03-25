@@ -1,0 +1,48 @@
+.g-bnr {
+	position: relative;
+	width: 100%;
+	height: 460px;
+	overflow: hidden;
+	/* background-color: #ccc; */
+}
+.g-bnr .bnr {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	line-height: 0;
+}
+.g-bnr .bnr .u-lnk {
+	width: 100%;
+	height: 460px;
+}
+.g-bnr .pic1 {
+	z-index: 1;
+	background: url(../lib/img/banner/bnr1.jpg) no-repeat center;
+}
+.g-bnr .pic2 {
+	z-index: -1;
+	background: url(../lib/img/banner/bnr2.jpg) no-repeat center;
+}
+.g-bnr .pic3 {
+	z-index: -2;
+	background: url(../lib/img/banner/bnr3.jpg) no-repeat center;
+}
+.g-bnr .u-slide {
+	position: absolute;
+	bottom: 20px;
+	z-index: 9;
+	width: 100%;
+	line-height: 0;
+	text-align: center;
+}
+.u-slide .sldptr {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 11px;
+	border-radius: 50%;
+	background-color: #fff;
+}
+.u-slide .z-crt {
+	background-color: #333;
+}

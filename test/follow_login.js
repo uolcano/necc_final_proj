@@ -56,12 +56,12 @@ window.addEventListener('load', function () {
 		 * @description [关闭登录框后，移除登陆模块的相关事件]
 		 */
 		// 添加输入框事件
-		function addEvent (elem) {
+		function addInputFrmEvent (elem) {
 			elem.addEventListener('keypress', keyPress);
 			elem.addEventListener('blur', focusBlur);
 		}
 		// 移除输入框事件
-		function removeEvent (elem) {
+		function removeInputFrmEvent (elem) {
 			elem.removeEventListener('keypress', keyPress);
 			elem.removeEventListener('blur', focusBlur);
 		}
@@ -70,8 +70,8 @@ window.addEventListener('load', function () {
 			loginMod.style.display = 'none';
 			close.removeEventListener('click', closeLogin);
 			btn.removeEventListener('click', submitLogin);
-			removeEvent(usernmTxt);
-			removeEvent(passwdTxt);
+			removeInputFrmEvent(usernmTxt);
+			removeInputFrmEvent(passwdTxt);
 		}
 
 		/**
@@ -158,8 +158,8 @@ window.addEventListener('load', function () {
 		
 		// 显示登录模块并添加事件
 		loginMod.style.display = 'block';
-		addEvent(usernmTxt);
-		addEvent(passwdTxt);
+		addInputFrmEvent(usernmTxt);
+		addInputFrmEvent(passwdTxt);
 		close.addEventListener('click', closeLogin);
 		hiddenErr(errmsg);
 		// 添加登录事件
@@ -242,16 +242,16 @@ window.addEventListener('load', function () {
 	 * 
 	 */
 	var queryData = function () {
-		// cach用于缓存在上一次ajax请求时创建的xhr对象和对应load事件调用的处理程序，以便移除上一次创建的load事件和xhr对象
-		var cach = {getData:null, throwExcept:null, xhr:null};
+		// cache用于缓存在上一次ajax请求时创建的xhr对象和对应load事件调用的处理程序，以便移除上一次创建的load事件和xhr对象
+		var cache = {getData:null, throwExcept:null, xhr:null};
 		return function(callback, url, options) {
 			// 清除在上一次ajax请求时创建的load事件、error事件及其事件处理程序和xhr对象
-			if (cach.getData instanceof Function && cach.throwExcept instanceof Function && (cach.xhr instanceof XMLHttpRequest || cach.xhr instanceof XDomainRequest)) {
-				EventUtil.removeHandler(cach.xhr, 'load', cach.getData);
-				EventUtil.removeHandler(cach.xhr, 'error', cach.throwExcept);
-				cach.throwExcept = null;
-				cach.getData = null;
-				cach.xhr = null;
+			if (cache.getData instanceof Function && cache.throwExcept instanceof Function && (cache.xhr instanceof XMLHttpRequest || cache.xhr instanceof XDomainRequest)) {
+				EventUtil.removeHandler(cache.xhr, 'load', cache.getData);
+				EventUtil.removeHandler(cache.xhr, 'error', cache.throwExcept);
+				cache.throwExcept = null;
+				cache.getData = null;
+				cache.xhr = null;
 				delete callback.response;// 删除callback中存储响应报文的属性，为waitResponse模拟同步请求铺路
 				console.log('clear the xhr, load event and the previous response successfully.');
 			}
@@ -262,7 +262,24 @@ window.addEventListener('load', function () {
 				console.log('Request unsuccessfully:' + xhr.status);
 			}
 			var queryOpt = url + ((typeof options === 'string' && options.length > 0) ? '?' + options : '');
-			var xhr = CompatUtil.createCORSRequest('get', queryOpt);// IE8的XMLHttpRequest不支持跨域，只能用XDomainRequest
+			// var xhr = CompatUtil.createCORSRequest('get', queryOpt);// IE8的XMLHttpRequest不支持跨域，只能用XDomainRequest
+			// if (xhr) {
+			// 	EventUtil.addHandler(xhr, 'load', getData);
+			// 	EventUtil.addHandler(xhr, 'error', throwExcept);
+			// 	xhr.send(null);
+			// }
+			var xhr = new XMLHttpRequest();
+			try {
+				xhr.open('get', queryOpt);
+			} catch(e1) {
+				try {
+					xhr = new XDomainRequest();
+					xhr.open('get', queryOpt);
+					console.log('create a cross-origin request for IE');
+				} catch(e2) {
+					console.log('Error: create request unsuccessfully.', e2);
+				}
+			}
 			if (xhr) {
 				EventUtil.addHandler(xhr, 'load', getData);
 				EventUtil.addHandler(xhr, 'error', throwExcept);
@@ -271,9 +288,9 @@ window.addEventListener('load', function () {
 			// console.log(callback.response);
 
 			// 将xhr对象和事件处理程序缓存到下一次ajax请求，以便移除
-			cach.xhr = xhr;
-			cach.getData = getData;
-			cach.throwExcept = throwExcept;
+			cache.xhr = xhr;
+			cache.getData = getData;
+			cache.throwExcept = throwExcept;
 		}
 	}();
 
@@ -326,15 +343,15 @@ window.addEventListener('load', function () {
 /*
 // 获取服务器端数据
 var queryData = function () {
-	// cach用于缓存在上一次ajax请求时创建的xhr对象和对应load事件调用的处理程序，以便移除上一次创建的load事件和xhr对象
-	var cach = {getData:null, xhr:null};
+	// cache用于缓存在上一次ajax请求时创建的xhr对象和对应load事件调用的处理程序，以便移除上一次创建的load事件和xhr对象
+	var cache = {getData:null, xhr:null};
 	return function(callback, url, options) {
 		// 清除在上一次ajax请求时创建的load事件和xhr对象
-		if (getType(cach.getData) === 'function' && getType(cach.xhr) === 'xmlhttprequest') {
-			EventUtil.removeHandler(cach.xhr, 'load', cach.getData);
-			// cach.xhr.removeEventListener('load', cach.getData);
-			cach.getData = null;
-			cach.xhr = null;
+		if (getType(cache.getData) === 'function' && getType(cache.xhr) === 'xmlhttprequest') {
+			EventUtil.removeHandler(cache.xhr, 'load', cache.getData);
+			// cache.xhr.removeEventListener('load', cache.getData);
+			cache.getData = null;
+			cache.xhr = null;
 			console.log('clear xhr and load event');
 		}
 		var xhr = CompatUtil.createXHR(),
@@ -353,8 +370,8 @@ var queryData = function () {
 		EventUtil.addHandler(xhr, 'load', getData);
 		// console.log(callback.response);
 		// 将xhr对象和事件处理程序缓存到下一次ajax请求，以便移除
-		cach.xhr = xhr;
-		cach.getData = getData;
+		cache.xhr = xhr;
+		cache.getData = getData;
 	}
 }();
 // var url = 'http://study.163.com/webDev/couresByCategory.htm',

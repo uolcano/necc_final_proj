@@ -1,0 +1,233 @@
+.vuj-vdowin {
+	/* display: none; */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 400px;
+	margin: -200px 0 0 -300px;
+	/* border-top: 10px solid #7f0; */
+	/* border-left: 4px solid #ffa; */
+	/* padding: 10px; */
+}
+.vuj-vdosrc {
+	width: 100%;
+	height: 100%;
+}
+.vug-panel .vuj-playctrl {
+	float: left;
+	padding: 5px 10px;
+}
+.vug-panel .vuz-running {
+	box-sizing: border-box;
+	width: 10px;
+	height: 10px;
+	border-right: 4px solid #999;
+	border-left: 4px solid #999;
+}
+.vug-panel .vuz-paused {
+	box-sizing: border-box;
+	width: 10px;
+	height: 10px;
+	border-top: 5px solid transparent;
+	border-right: 0px solid;
+	border-bottom: 5px solid transparent;
+	border-left: 10px solid #999;
+}
+.vug-panel .vug-timepass {
+	float: left;
+	padding: 0 10px;
+	border-left: 1px solid #666;
+	line-height: 20px;
+	color: #999;
+}
+.vug-panel .vuj-fullwin {
+	float: right;
+	box-sizing: border-box;
+	width: 20px;
+	height: 15px;
+	margin: 2.5px 10px;
+	border: 2px dashed #999;
+}
+.vug-panel .vuj-fullwin:hover {
+	width: 28px;
+	height: 21px;
+	margin: -0.5px 6px;
+	border-width: 3px;
+}
+.vuj-vdowin.vuz-fulled {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	bottom: 10px;
+	right: 10px;
+	width: auto;
+	height: auto;
+	margin: 0;
+}
+.vug-panel .vuj-sndvlm {
+	position: relative;
+	float: right;
+	box-sizing: border-box;
+	height: 100%;
+	padding: 0 10px;
+	border-right: 1px solid #666;
+	border-left: 1px solid #666;
+	text-align: center;
+	line-height: 20px;
+	color: #999;
+}
+.vuj-sndvlm .vuj-sndbar {
+	display: none;
+	position: absolute;
+	bottom: 20px;
+	left: 15px;
+	width: 10px;
+	height: 100px;
+	border: 2px solid #888;
+	border-radius: 10px;
+	background-color: #666;
+}
+.vuj-sndvlm .vuj-sndbar .vuj-volume {
+	position: absolute;
+	bottom: 0px;
+	height: 0%;
+	border-radius: 0 0 10px 10px;
+	background-color: #fa7;
+}
+.vuj-sndvlm .vuj-sndbar .vuj-ptr {
+	position: relative;
+	float: none;
+	margin: -10px -5px;
+}
+.vuj-sndvlm .vuj-sndicon {
+	box-sizing: border-box;
+	width: 24px;
+	height: 18px;
+	margin: 1px 0;
+}
+.vuj-sndvlm .vuj-sndicon * {
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+}
+.vuj-sndvlm .vui-ldspkr {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 8px;
+	height: 18px;
+	border-top: 6px solid transparent;
+	border-right: 8px solid #999;
+	border-bottom: 6px solid transparent;
+	border-left: 0 solid;
+}
+.vuj-sndvlm .vui-ldspkr:before {
+	content: '';
+	display: inline-block;
+	position: relative;
+	top: -9px;
+	left: -1px;
+	box-sizing: border-box;
+	width: 4px;
+	height: 8px;
+	border: 3px solid #999;
+}
+.vuj-sndvlm .vui-sndvw1 {
+	display: none;
+	top: -9px;
+	left: -1px;
+	width: 4px;
+	height: 8px;
+	border-radius: 0 5px 5px 0 / 0 10px 10px 0;
+	box-shadow: 2px 0 0 0 #999;
+}
+.vuj-sndvlm .vui-sndvw2 {
+	display: none;
+	top: -5px;
+	width: 4px;
+	height: 16px;
+	border-radius: 0 5px 5px 0 / 0 10px 10px 0;
+	box-shadow: 2px 0 0 0 #999;
+}
+.vuj-sndvlm .vuz-muted .vui-ldspkr:after {
+	content: '/';
+	display: inline-block;
+	position: relative;
+	top: -27px;
+	left: -8px;
+	width: 24px;
+	height: 18px;
+	font: oblique bold 18px/1 'Microsoft Yahei', monospace;
+	color: #ccc;
+}
+.vuj-sndvlm .vuz-vlm1 .vui-sndvw1, .vuj-sndvlm .vuz-vlm2 .vui-sndvw1, .vuj-sndvlm .vuz-vlm2 .vui-sndvw2 {
+	display: inline-block;
+}
+.vug-panel .vuj-netwkinfo {
+	float: right;
+	width: 80px;
+	padding: 0 10px;
+	text-align: center;
+	line-height: 20px;
+	color: #999;
+}
+.vuj-ctrlbar, .vug-panel {
+	position: relative;
+	bottom: 25px;
+	left: 50%;
+	width: 90%;
+	height: 20px;
+	margin: -10px 0 0 -44%;
+	border-radius: 5px;
+	background-color: #333;
+}
+.vuj-ctrlbar {
+	bottom: 14px;
+}
+.vuj-ctrlbar .vuj-cache {
+	position: absolute;
+	height: 100%;
+	border-radius: 5px 0 0 5px;
+	background-color: #555;
+}
+.vuj-ctrlbar .vuj-progrs {
+	position: absolute;
+	width: 0;
+	height: 100%;
+	border-radius: 5px;
+	background-color: #aaa;
+}
+.vuj-vdowin .vuj-ptr {
+	position: relative;
+	float: right;
+	margin: 0 -10px;
+	box-sizing: border-box;
+	width: 20px;
+	height: 20px;
+	border: 4px double #999;
+	box-shadow: inset -1px 1px 2px 0 #aaa, -1px 1px 3px 0 #000;
+	border-radius: 50%;
+	background-color: #eee;
+	cursor: pointer;
+}
+.vuj-ctrlbar .vuz-draged {
+	width: 25px;
+	height: 25px;
+	margin: -2.5px -12.5px;
+	box-shadow: inset -2px 2px 4px 0 #777, -2px 2px 6px 0 #000;
+}
+.vuz-hidden {
+	animation: kf-showctrlbar 4s ease-in-out 3s 1;
+}
+@keyframes kf-showctrlbar {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+.vuj-sndvlm:hover .vuj-sndbar {
+	display: block;
+	animation: kf-showsndbar 1s 1;
+}
+@keyframes kf-showsndbar {
+	0% {opacity: 0; height: 0;}
+	100% {opacity: 1; height: 100px;}
+}

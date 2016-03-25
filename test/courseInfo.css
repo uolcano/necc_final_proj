@@ -1,0 +1,264 @@
+/**
+ * 在不另外使用.u-popup情况下，使得HTML结构的冗余得到解决
+ * 从orgIntro_video.css的1~219行代码优化而来
+ * 在ajax动态生成课程卡片内容时，可以减少冗余结构的处理
+ */
+
+/**
+ * layout: 主介绍内容区
+ */
+.g-intros {
+	font-family: "Microsoft YaHei", monospace;
+}
+.g-intros .g-main {
+	float: left;
+}
+.g-intros .g-side {
+	float: right;
+}
+/* 超出显示省略号 */
+.g-intros .crsname, .g-intros .categ, .g-intros .lrncnt, .g-intros .price, .g-intros .provdr, .g-intros .title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/* 学习人数前的图标 */
+.g-intros .lrncnt:before {
+	content: '';
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	margin-right: 5px;
+	background: url(../lib/img/sprites/sprites.png) no-repeat -170px -88px;
+}
+.g-intros .crsname, .g-intros .title {
+	font-weight: 400;
+}
+
+/**
+ * layout: 课程内容区
+ */
+.g-main .u-tabs, .g-main .m-crscards {
+	float: left;
+}
+.g-main .m-pgselr {
+	float: right;
+	margin: 30px 20px 0 0;
+}
+
+/**
+ * unit: tab标签集
+ */
+.u-tabs {
+	margin: 0 0 30px 0;
+	box-shadow: 0 1px 1px 1px #d4d3d3;
+}
+.u-tabs .tab {
+	float: left;
+	width: 200px;
+	height: 50px;
+	text-align: center;
+	font-size: 20px;
+	line-height: 50px;
+	color: #666;
+	background-color: #fff;
+}
+.u-tabs .tuz-crt {
+	color: #fff;
+	background-color: #39a030;
+}
+
+/**
+ * module: 课程卡片组
+ */
+.m-crscards {
+	margin: -10px;/* 处理靠近四边的卡片多出来的10px外边距 */
+	width: 100%;
+}
+/**
+ * unit: 课程卡
+ */
+.u-card {
+	float: left;
+	box-sizing: border-box;
+	width: 225px;
+	height: 228px;
+	margin: 10px;/* 每张卡片外边距10px */
+	padding: 0 5px;
+	font-size: 12px;
+	line-height: 1;
+	background-color: #fff;
+	box-shadow: 0 1px 1px 1px #e6e6e6;
+}
+.u-card .lnk {
+	width: 100%;
+	height: 100%;
+}
+.u-card .pic {
+	width: 223px;
+	height: 124px;
+	margin: 1px 0 0 -4px;
+	background-color: #acf;
+}
+.u-card .crsname {
+	margin: 10px 0 0 0;
+}
+.u-card .categ {
+	margin: 10px 0 0 0;
+	color: #999;
+}
+.u-card .lrncnt {
+	display: inline-block;
+	margin: 10px 0 0 0;
+	padding: 3px;
+	border: 1px solid #dddddd;
+	border-radius: 3px;
+	color: #999;
+}
+.u-card .price {
+	margin: 8px 0 0 0;
+	color: #ff3f00;
+}
+.u-card .price:before {
+	content: '￥';
+}
+.u-card .provdr, .u-card .descrip {
+	display: none;
+}
+/* 调整卡片结构显示浮层 */
+.u-card:hover * {
+	font-size: 12px;
+	color: #666;
+}
+.u-card:hover .lnk {
+	position: relative;/* 作为.categ的参考父容器 */
+	box-sizing: border-box;
+	width: 481px;
+	height: auto;
+	margin: -10px -236px -200px -15px;
+	padding: 0;
+	min-height: 238px;
+	z-index: 1;
+	letter-spacing: 1px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px 1px rgba(12, 4, 8, 0.5);
+}
+.u-card:hover .pic {
+	float: left;
+	margin: 11px 19px 0 11px;
+}
+.u-card:hover .crsname {
+	margin: 15px 10px 0 0;
+	font-size: 18px;
+}
+.u-card:hover .lrncnt {
+	margin: 0;
+	padding: 17px 0 0 4px;
+	border: none;
+}
+.u-card:hover .lrncnt:after {
+	content: '人在学';
+}
+.u-card:hover .price {
+	display: none;
+}
+.u-card:hover .categ {
+	position: absolute;
+	top: 87px;
+	left: 252px;
+	margin: 0;
+	padding: 13px 0 0 4px;
+}
+.u-card:hover .provdr {
+	display: block;
+	padding: 13px 0 0 4px;
+}
+.u-card:hover .provdr:before {
+	content: '发布者：';
+}
+.u-card:hover .categ:before {
+	content: '分类：';
+}
+.u-card:hover .descrip {
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 84px;
+	margin: 20px 0 0 0;
+	padding: 21px;
+	font-size: 14px;
+	line-height: 1.5;
+	background-color: #f8f8f8;
+}
+/**
+ * module: 选页器
+ */
+.m-pgselr .page {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+}
+.m-pgselr .page:hover {
+	color: #fff;
+	background-color: #9dd8b1;
+}
+.m-pgselr .prev, .m-pgselr .next {
+	width: 30px;
+	height: 20px;
+	background: url(../lib/img/sprites/sprites.png) no-repeat -62px -50px;
+}
+.m-pgselr .next {
+	background-position: -62px -70px;
+}
+.m-pgselr .tuz-crt {
+	color: #39a303;
+}
+/**
+ * status: 按钮效果
+ */
+.tuz-unclk {
+	box-shadow: 1px 1px 1px 1px #a6a6a6;
+}
+.tuz-clked {
+	box-shadow: inset 1px 1px 2px 1px #a6a6a6;
+}
+
+
+/**
+ * unit: hover效果
+ */
+.u-hover {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.u-hover:hover {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+
+/* test style */
+.g-intros {
+	margin-top: 100px;
+}
+.g-main {
+	/* box-sizing: border-box; */
+}
+@media screen and (max-width: 1611px) {
+	.g-main {
+		width: 735px;
+	}
+}
+@media screen and (min-width: 1612px) {
+	.g-main {
+		width: 980px;
+	}
+}
+/* .g-main .m-pgselr, */
+.g-side {
+	/* display: none; */
+}
