@@ -36,7 +36,7 @@ window.addEventListener('load', function () {
 		// 显示输入错误提示
 		function showErr (elem, text) {
 			elem.style.visibility = 'visible';
-			CompatUtil.innerText(elem, 'set', text);
+			maniInnerText(elem, 'set', text);
 		}
 
 		/**
@@ -195,18 +195,16 @@ window.addEventListener('load', function () {
 		CookieUtil.unset('followSuc');
 		flw.style.display = 'inline-block';
 		var parent = flw.parentNode;
-		var textFunc = CompatUtil.innerText;
 		parent.children[1].style.display = 'none';
-		textFunc(parent.children[2], 'set', textFunc(parent.children[2], 'get') - 1);
+		maniInnerText(parent.children[2], 'set', maniInnerText(parent.children[2], 'get') - 1);
 	}
 
 	// 设置关注后的状态
 	function loadFollow (elem) {
 		elem.style.display = 'none';
 		var parent = elem.parentNode;
-		var textFunc = CompatUtil.innerText;
 		parent.children[1].style.display = 'inline-block';
-		textFunc(parent.children[2], 'set', textFunc(parent.children[2], 'get') - 1 + 2);
+		maniInnerText(parent.children[2], 'set', maniInnerText(parent.children[2], 'get') - 1 + 2);
 	}
 	
 	/**
