@@ -289,7 +289,7 @@ window.addEventListener('load', function () {
 			cache.xhr = xhr;
 			cache.getData = getData;
 			cache.throwExcept = throwExcept;
-		}
+		};
 	}();
 
 	/**

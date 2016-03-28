@@ -1,716 +1,363 @@
-
-/* 清除浮动 */
-.f-fltclr:after {
-	content: '.';
-	display: block;
-	clear: both;
-	height: 0;
-	visibility: hidden;
-	overflow: hidden;
-}
-/* 链接后“>”特殊符号 */
-.f-lnktrl:after {
-	content: ' >';
-}
-/* 显示省略 */
-.f-elps {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-/* 部分区域水平居中 */
-.f-center {
-	margin: 0 203px;
-	min-width: 963px;
-	max-width: 1210px;
-}
-.f-cursor {
-	cursor: pointer;
-}
-
-
-/*
- * 限定页面宽度
- */
 body {
-	max-width: 1616px;
-	min-width: 1364px;
-	margin: 0 auto;
+    min-width: 1366px;
 }
-/*
- * 顶栏小黄条
+@media screen and (max-width:1611px) {
+    .f-center {
+        min-width: 960px;
+        margin: 0 203px;
+    }
+}
+@media screen and (min-width:1611px) {
+    .f-center {
+        display: table;
+        min-width: 1205px;
+        margin: 0 auto;
+    }
+}
+
+/* 小功能集合 */
+/**
+ * 清除浮动
  */
-.g-topbar {
-	width: 100%;
-	height: 36px;
-	background-color: #f3f3f3;
+.f-fltclr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
 }
-.m-topmsg div {
-	display: table-cell;
-	vertical-align: middle;
-/* 	color: #333; */
-	font: 12px/36px "Microsoft YaHei", monospace;
-}
-.m-topmsg .msg {
-	float: left;
-}
-.m-topmsg .lnk {
-	color: #21a557;
-}
-.m-topmsg .msgcls {
-	float: right;
-}
-.m-topmsg .msgcls:before {
-	content: '';
-	display: inline-block;
-	margin-right: 6px;
-	width: 9px;
-	height: 9px;
-	background: url(../img/sprites/opacity.png) no-repeat -48px -29px;
-}
-/* end */
-
-
-/*
- * 顶部导航条
+/**
+ * 全局设置指针效果
  */
-.g-top {
-	width: 100%;
-	height: 88px;
-	line-height: 88px;
-}
-.m-nav .u-logo {
-	float: left;
-}
-.m-nav .toplogo {
-/* 	color: #333; */
-}
-.m-nav .u-flw {
-	float: left;
-}
-.m-nav .u-nav {
-	float: right;
-}
-
-/*
- * logo标志单元
- */
-.u-logo {
-	color: #39a030;
-}
-.u-logo .en {
-	font: bold 28px/0.714 "Gill Sans MT", monospace;
-}
-.u-logo .vbar {
-	display: inline-block;
-	margin: 0 13px 0 10px;
-	width: 1px;
-	height: 18px;
-	background-color: #39a030;
-}
-.u-logo .zh {
-	vertical-align: 10%;
-	font: 22px/0.909 "Hiragino Sans GB", sans-serif;
-}
-
-/*
- * 关注单元
- */
-.u-flw>* {
-	font: 12px/21px "SimSun", serif;
-	vertical-align: 30%;
-}
-.u-flw .btn {
-	display: inline-block;
-	margin: 0 14px 0 30px;
-	line-height: 21px;
-	text-align: center;
-	border-radius: 2px;
-}
-.u-flw .unflw {
-	height: 21px;
-	width: 54px;
-	color: #fff;
-	background-color: #21a557;
-}
-.u-flw .unflw:hover {
-	background-color: #2fb556;
-}
-.u-flw .unflw:before {
-	content: '';
-	font-weight: bold;
-}
-.u-flw .flwed {
-	width: 104px;
-	height: 19px;
-	border: 1px solid #efefef;
-	background-color: #f8f8f8;
-}
-.u-flw .txt {
-/* 	color: #333; */
-}
-.u-flw .txt:before {
-	content: '';
-	display: inline-block;
-	margin-right: 5px;
-	vertical-align: -10%;
-	width: 11px;
-	height: 9px;
-	background: url(../img/sprites/opacity.png) no-repeat -58px -31px;
-}
-.u-flw .vbar {
-	display: inline-block;
-	margin: 0 8px 0 9px;
-	width: 1px;
-	height: 10px;
-	background-color: #ccc;
-}
-.u-flw .cncl {
-	color: #999;
-}
-.u-flw .cncl:hover {
-	text-decoration: underline;
-	color: #21a557;
-}
-.u-flw .flwnum {
-	margin-left: ;
-	color: #666;
-}
-
-/*
- * 导航单元
- */
-.u-nav>* {
-	display: inline-block;
-	font: 16px "Hiragino Sans GB", sans-serif;
-	color: #666;
-}
-.u-nav .cloud {
-	margin: 0 55px;
-}
-.u-nav a:hover {
-	color: #39a030;
-}
-.u-nav .srch {
-	margin-left: 30px;
-	width: 19px;
-	height: 19px;
-	vertical-align: -20%;
-	background: url(../img/sprites/icon.png) no-repeat -242px -90px;
-}
-.u-nav .srch:hover {
-	background-position: -242px -109px;
-}
-/* end */
-
-
-/*
- * 轮播图
- */
-.g-bnr {
-	width: 100%;
-}
-.m-bnr {
-	position: relative;
-	width: 100%;
-	height: 460px;
-	overflow: hidden;
-	background-color: #ccc;
-}
-.m-bnr .bnrpic {
-	position: absolute;
-	top: 0;
-	width: 100%;
-}
-.m-bnr .bnrpic>* {
-	display: inline-block;
-	width: 100%;
-	height: 460px;
-}
-.m-bnr .bnr1 {
-	z-index: 1;
-	background: url(../img/banner/bnr1.jpg) no-repeat center;
-}
-.m-bnr .bnr2 {
-	z-index: -1;
-	background: url(../img/banner/bnr2.jpg) no-repeat center;
-}
-.m-bnr .bnr3 {
-	z-index: -2;
-	background: url(../img/banner/bnr3.jpg) no-repeat center;
-}
-/*
- * 滑动球
- */
-.m-bnr .u-sld {
-	position: absolute;
-	bottom: 20px;
-	width: 100%;
-	line-height: 0;
-	text-align: center;
-	z-index: 9;
-}
-.u-sld .sldptr {
-	display: inline-block;
-	margin-right: 11px;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	background-color: #fff;
-}
-.u-sld .z-crtptr {
-	background-color: #333;
-}
-/* end */
-
-/*
- * 产品介绍
- */
-.g-prod {
-	width: 100%;
-	margin: 60px auto;
-}
-.m-3prod {
-	margin-right: 123px;/* 修正右边padding的80px，必须置于f-center规则后 */
-}
-.m-3prod>* {
-	float: left;
-	width: 33.33%;
-}
-.m-3prod .open .u-icon {
-	background: url(../img/sprites/icon.png) -80px -48px;
-}
-.m-3prod .cloud .u-icon {
-	background: url(../img/sprites/icon.png) 0 -48px;
-}
-.m-3prod .mooc .u-icon {
-	background: url(../img/sprites/icon.png) -160px -48px;
-}
-.m-3prod .u-icon {
-	float: left;
-	margin-top: 6px;
-	width: 80px;
-	height: 80px;
-}
-.m-3prod .u-txt {
-	overflow: hidden;
-	padding-right: 80px;
-	padding-left: 20px;
-	box-sizing: border-box;
-	font-family: "Microsoft YaHei", monospace;
-}
-.m-3prod .title {
-/* 	color: #333; */
-	font-size: 22px;
-	line-height: 2;
-}
-.m-3prod .descrb, .m-3prod .lnk {
-	color: #666;
-	font-size: 14px;
-}
-.m-3prod .lnk {
-	color: #39a030;
-}
-.m-3prod .lnk:hover {
-	text-decoration: underline;
-}
-/* end */
-
-/* 背景色变更 */
-.g-main {
-	background-color: #f8f8f8;
-}
-
-/*
- * 工作环境展示
- */
-.g-wkenvi {
-	width: 100%;
-	height: 220px;
-	margin-bottom: 80px;
-	overflow: hidden;
-	background-color: #f8f8f8;
-}
-.m-wkenvi {
-	margin: 0 calc((100% - 1616px) / 2);/* calc()只兼容IE9+ */
-	width: 1616px;
-	line-height: 0;
-}
-.m-wkenvi .pic1 {
-	background: url(../img/work_envi/we1.jpg) no-repeat center;
-}
-.m-wkenvi .pic2 {
-	background: url(../img/work_envi/we2.jpg) no-repeat center;
-}
-.m-wkenvi .pic3 {
-	background: url(../img/work_envi/we3.jpg) no-repeat center;
-}
-.m-wkenvi .pic4 {
-	background: url(../img/work_envi/we4.jpg) no-repeat center;
-}
-.m-wkenvi .pic5 {
-	background: url(../img/work_envi/we5.jpg) no-repeat center;
-}
-.m-wkenvi .g-imgctnr {
-	float: left;
-	width: 320px;
-	height: 220px;
-	background-color: #a0a0ec;
-	line-height: 0;
-	overflow: hidden;
-}
-.m-wkenvi .g-imgctnr+.g-imgctnr {
-	margin-left: 4px;
-}
-
-/*
- * 课程信息清单，分左侧内容区和右侧边栏
- */
-.g-crsinfo {
-	font-family: "Microsoft YaHei", monospace;
-}
-.g-crsinfo .g-linfo {
-	float: left;
-	margin-right: -246px;
-	width: 960px;
-}
-.g-crsinfo .g-rinfo {
-	float: right;
-	margin-left: 23px;
-}
-
-/*
- * tab切换
- */
-.m-crstabs {
-	margin-bottom: 29px;
-}
-.m-crstabs .shadow {
-	float: left;
-	box-shadow: 0 1px 1px 1px #d4d3d3;
-}
-.m-crstabs .u-tab {
-	float: left;
-	width: 200px;
-	height: 50px;
-	line-height: 50px;
-	font-size: 20px;
-	text-align: center;
-	color: #666;
-	background-color: #fff;
-}
-.m-crstabs .z-crt {
-	color: #fff;
-	background-color: #39a030;
-}
-
-/*
- * 课程卡片
- */
-.m-crscards {
-	margin: -10px;/* 处理靠近四边的卡片多出来的10px外边距 */
-	height: 1220px;
-}
-.m-crscards .u-card {
-	position: relative;
-	float: left;
-	margin: 10px;/* 每张卡片外边距10px */
-	box-sizing: border-box;
-	width: 225px;
-	height: 228px;
-	line-height: 1;
-	font-size: 12px;
-	background-color: #fff;
-	box-shadow: 0 1px 1px 1px #e6e6e6;
-}
-.u-card>*+* {
-	margin: 10px 0 0 5px;
-}
-.u-card .hidden {
-	display: none;
-}
-.u-card .pic {
-	width: 223px;
-	height: 124px;
-	margin: 1px 0 0 1px;
-	background-color: #acf;
-}
-.u-card .crsname {
-/* 	color: #333; */
-}
-.u-card .categ, .u-card .lerncnt {
-	color: #999;
-}
-.g-crsinfo .lerncnt:before {/* 这里可以使得课程信息部分的左侧内容区和右侧边栏的所有学习者统计前都有图标 */
-	content: '';
-	display: inline-block;
-	margin-right: 5px;
-	width: 11px;
-	height: 11px;
-	vertical-align: -10%;
-	background: url(../img/sprites/opacity.png) no-repeat -48px 0;
-}
-.u-card .price {
-	color: #ff3f00;
-}
-
-/*
- * 课程卡片浮层
- */
-.u-card .u-popup {
-	letter-spacing: 1px;
-	position: absolute;
-	top: -10px;
-	left: -10px;
-	margin: 0;
-	box-sizing: border-box;
-	width: 481px;
-	height: 238px;
-	background-color: #fff;
-	box-shadow: 0px 1px 3px 1px rgba(12, 4, 8, 0.5);
-	z-index: 1;
-}
-.u-card .u-popup>.uppart {
-	padding: 10px 0 0 10px;
-	margin: 0 0 20px 0;
-	height: 125px;
-}
-.u-card .u-popup .pic {
-	float: left;
-	margin: 1px 19px 0 1px;
-}
-.u-card .u-popup .lerncnt, .u-card .u-popup .provd, .u-card .u-popup .categ, .u-card .u-popup .descrip {
-	font-size: 12px;
-	color: #666;
-}
-.u-card .u-popup .crsname {
-	margin-top: 4px;
-/* 	color: #333; */
-	font-size: 18px;
-}
-.u-card .u-popup .lerncnt:after {
-	content: '人在学';
-}
-.u-card .u-popup .lerncnt {
-	margin: 17px 0 13px 0;
-}
-.u-card .u-popup .provd:before {
-	content: '发布者：';
-}
-.u-card .u-popup .categ:before {
-	content: '分类：';
-}
-.u-card .u-popup .categ {
-	margin: 8px 0 0 0;
-}
-.u-card .u-popup .descrip {
-	padding: 21px;
-	height: 83px;
-	box-sizing: border-box;
-	line-height: 1.5;
-	overflow: hidden;
-	font-size: 14px;
-	background-color: #f8f8f8;
-}
-
-/*
- * 换页选择器
- */
-.m-pagesel {
-	float: right;
-	height: 20px;
-	margin: 30px 0 120px 0;
-}
-.m-pagesel>* {
-	cursor: pointer;
-}
-.m-pagesel .prev, .m-pagesel .next {
-	/* display: table-cell; */
-	display: inline-block;
-	vertical-align: middle;
-	width: 30px;
-	height: 20px;
-	background: url(../img/sprites/icon.png) no-repeat -241px -48px;
-}
-.m-pagesel .next {
-	background-position: -241px -68px;
-}
-.m-pagesel .z-sel {
-	color: #39a030;
-}
-.m-pagesel .page {
-	/* display: table-cell; */
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	vertical-align: middle;
-	text-align: center;
-	font-size: 14px;
-}
-.m-pagesel .page:hover {
-	color: #fff;
-	background-color: #9dd8b1;
-}
-
-
-/*
- * 右侧边栏
- */
-.m-orgintro, .g-tophot {
-	margin-bottom: 21px;
-	width: 223px;
-	height: 229px;
-	background-color: #fff;
-	box-shadow: 0px 1px 1px 0px rgba(6, 0, 1, 0.2);
-}
-/*
- * 机构介绍
- */
-.m-orgintro>*, .g-tophot>* {
-	padding: 20px;
-	box-sizing: border-box;
-	line-height: 1;
-}
-.m-orgintro .title {
-	height: 55px;
-	border-bottom: 1px solid #ddd;
-	font-size: 16px;
-/* 	color: #333; */
-}
-.m-orgintro .detail {
-	font-size: 14px;
-	color: #666;
-}
-.m-orgintro .video {
-	margin-top: 10px;
-	width: 180px;
-	height: 110px;
-	background: url(../img/poster/poster_small.jpg) no-repeat center;
-	background-color: #acf;
-}
-.m-orgintro .u-icon {
-	position: relative;
-	top: 30px;
-	left: 65px;
-	width: 44px;
-	height: 44px;
-	border: 3px solid #fff;
-	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.4);
-	opacity: 0.6;
-}
-.m-orgintro .video:hover .u-icon {
-	opacity: 0.9;
-}
-/* play图标 */
-.m-orgintro .u-icon:before {
-	content: '';
-	display: block;
-	position: absolute;
-	left: 16px;
-	top: 13px;
-	width: 14px;
-	height: 18px;
-	box-sizing: border-box;
-	border-top: 9px solid transparent;
-	border-right: 0 solid;
-	border-bottom: 9px solid transparent;
-	border-left: 14px solid #fff;
-	opacity: 0.8;
-}
-/*
- * 最热排行
- */
-.g-tophot {
-	height: 778px;
-	line-height: 1;
-}
-.g-tophot .title {
-	height: 56px;
-	border-bottom: 1px solid #ddd;
-	font-size: 16px;
-/* 	color: #333; */
-}
-.m-rank {
-	width: 100%;
-	height: 722px;
-}
-.m-rank .course+.course {
-	margin-top: 20px;
-}
-.m-rank .pic {
-	float: left;
-	margin-right: 12px;
-	width: 50px;
-	height: 50px;
-	background-color: #acf;
-}
-.m-rank .crsname {
-	font-size: 14px;
-	/* color: #333; */
-}
-.m-rank .lerncnt {
-	margin-top: 12px;
-	/* font-size: 12px; */
-	color: #999;
-}
-/* end */
-
-/*
- * 将包裹区块的a链接设为块级
+.u-btn,
+.u-cncl,
+.u-slide .sldptr,
+.u-tabs .tab,
+.m-pgselr .page,
+.u-poster,
+.u-video .playicon,
+.u-video .run,
+.u-video .fullwin,
+.u-video .sharp,
+.u-video .sndclm,
+.u-video .ptr,
+.u-video .ctrlbar {
+    cursor: pointer;
+}
+.u-btn {
+    border: none;
+}
+/**
+ * 将所有需要有链接效果的元素设为块级
  */
 .u-lnk {
-	display: block;
+    display: inline-block;
+    cursor: pointer;
 }
-
-/*
- * 页面底部信息
+/**
+ * 链接尾部“>”特殊符号
  */
-.g-ft {
-	padding: 82px 0;
-	height: 276px;
-	box-sizing: border-box;
-	background-color: #2c3339;
+.u-lnktrl:after {
+    content: ' >';
 }
-.g-ft .g-ftinfo>* {
-	float: left;
+/**
+ * unit: 遮罩
+ */
+.u-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
 }
-.g-ft .logo {
-	margin: 10px 0 0 0;
-	width: 545px;
-}
-.g-ft .logo .cpyrght {
-	margin-top: 30px;
-}
-.g-ft .logo .cpyrght, .g-ft .frdlnk, .g-ft .about, .g-ft .more {
-	font-size: 12.5px;
-	color: rgba(255, 255, 255, 0.6);
-	line-height: 2;
-	text-align: left;
-}
-.g-ft .frdlnk {
-	width: 210px;
-}
-.g-ft .about {
-	width: 135px;
-}
-.g-ft a {
-	color: rgba(255, 255, 255, 0.6);
-}
-.g-ft a:hover {
-	text-decoration: underline;
-}
-.g-ft p {
-	font-size: 17px;
-	line-height: 30px;
-	color: rgba(255, 255, 255, 0.6);
-}
-.g-ft .weibo:after {
-	content: '';
-	display: inline-block;
-	margin-left: 10px;
-	width: 20px;
-	height: 16px;
-	background: url(../img/sprites/opacity.png) no-repeat -48px -12px;
+/**
+ * unit: 固定窗口
+ */
+.u-fxwin {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    z-index: 9;
+    background-color: #fff;
 }
 /* end */
+
+/* 顶部信息条 */
+.g-topmsg {
+    background-color: #f3f3f3;
+}
+.u-topmsg {
+    height: 36px !important;
+    line-height: 36px;
+}
+.u-topmsg * {
+    display: inline-block;
+    line-height: 36px;
+}
+.u-topmsg .msg {
+    float: left;
+}
+.u-topmsg .msgcls {
+    float: right;
+}
+.u-topmsg .lnk {
+    margin-left: 10px;
+    color: #21a557;
+}
+.u-topmsg .msgcls:before {
+    content: '';
+    display: inline-block;
+    margin-right: 6px;
+    width: 9px;
+    height: 9px;
+    background: url(../img/sprites/sprites.png) no-repeat -123px -101px;
+}
+/* end */
+
+
+/* 顶部综合信息栏 */
+/**
+ * layout: 顶部综合信息栏布局
+ */
+.g-topinfo .u-logo, .g-topinfo .u-flw {
+    float: left;
+}
+.g-topinfo .u-nav {
+    float: right;
+}
+.g-topinfo .u-logo .zh {
+    color: #333;
+}
+/**
+ * unit: logo标志
+ */
+.u-logo {
+    line-height: 88px;
+    color: #39a030;
+}
+.u-logo .en {
+    font: bold 28px/0.714 "Gill Sans MT", monospace;
+}
+.u-logo .vbar {
+    display: inline-block;
+    width: 1px;
+    height: 18px;
+    margin: 0 13px 0 10px;
+    background-color: #39a030;
+}
+.u-logo .zh {
+    vertical-align: 10%;
+    font: 22px/0.909 "Hiragino Sans GB", sans-serif;
+}
+/**
+ * unit: 关注
+ */
+.u-flw {
+    margin-left: 30px;
+    font: 12px/21px "SimSun", serif;
+}
+.u-flw>* {
+    display: inline-block;
+    margin-top: 30px;
+    text-align: center;
+}
+.u-flw .unflw {
+    height: 21px;
+    width: 54px;
+    line-height: 21px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #21a557;
+}
+.u-flw .unflw:hover {
+    background-color: #2fb556;
+}
+.u-flw .flwed {
+    width: 104px;
+    height: 19px;
+    border: 1px solid #efefef;
+    background-color: #f8f8f8;
+}
+.u-flw .txt:before {
+    content: '';
+    display: inline-block;
+    margin-right: 5px;
+    width: 11px;
+    height: 9px;
+    background: url(../img/sprites/sprites.png) no-repeat -123px -91px;
+}
+.u-flw .vbar {
+    margin: 0 8px 0 9px;
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+}
+.u-flw .cncl {
+    color: #999;
+}
+.u-flw .cncl:hover {
+    text-decoration: underline;
+    color: #21a557;
+}
+.u-flw .flwnum {
+    margin-left: 14px;
+    color: #666;
+}
+.u-flw .flwnum:before {
+    content: '粉丝 ';
+}
+/**
+ * unit: 导航
+ */
+.u-nav .u-lnk {
+    margin-left: 55px;
+    font: 16px "Hiragino Sans GB", sans-serif;
+}
+.u-nav .u-lnk>* {
+    height: 88px;
+    line-height: 88px;
+    color: #666;
+}
+.u-nav .u-lnk:hover>* {
+    color: #39a030;
+}
+.u-nav .srch {
+    width: 19px;
+    height: 19px;
+    margin-left: 30px;
+    vertical-align: -20%;
+    background: url(../img/sprites/sprites.png) no-repeat -62px -91px;
+}
+.u-nav .srch:hover {
+    background-position: -82px -91px;
+}
+/**
+ * module: 登录模块
+ */
+.m-login .login {
+    width: 387px;
+    height: 288px;
+    margin: -144px 0 0 -193px;
+    padding: 30px 0 0 40px;
+}
+.m-login .title {
+    font: bold 18px/1.556 "Microsoft YaHei", monospace;
+    color: #444;
+}
+.m-login .errmsg {
+    font: 12px/20px "Microsoft YaHei", monospace;
+    color: #f00;
+}
+.m-login .u-txt {
+    position: relative;
+}
+.m-login .u-txt .txt {
+    width: 293px;
+    height: 43px;
+    margin: 0 0 15px 0;
+    padding: 9px;
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    font: 16px/1.75 "Microsoft YaHei", monospace;
+    box-shadow: inset 2.828px 2.828px 0 0 #f1f1f1;
+    background-color: #fafafa;
+}
+.m-login .u-placeholder {
+    top: 9px;
+    left: 10px;
+}
+.m-login .submit {
+    width: 295px;
+    height: 48px;
+    margin: 11px 0 0 0;
+    text-align: center;
+    font: 16px/48px "Microsoft YaHei", monospace;
+    color: #fff;
+    background: url(../img/sprites/sprites.png) no-repeat -1px -1px;
+}
+.m-login .submit:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+.m-login .u-cncl {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 23px;
+    height: 22px;
+    border: none;
+    background: url(../img/sprites/sprites.png) no-repeat -267px -50px;
+    opacity: 0.5;
+}
+.m-login .u-cncl:hover {
+    opacity: 1;
+}
+.m-login .disabled {
+    background: #ababab;
+}
+/**
+ * unit: placeholder
+ */
+.u-placeholder {
+    position: absolute;
+    font: 16px/1.75 "Microsoft YaHei", monospace;
+    color: #ccc;
+}
+/* end */
+
+
+/* 轮播图 */
+.g-bnr {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    /* background-color: #ccc; */
+}
+.g-bnr .bnr {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    line-height: 0;
+}
+.g-bnr .bnr .u-lnk {
+    width: 100%;
+    height: 460px;
+}
+.g-bnr .pic1 {
+    z-index: 1;
+    background: url(../img/banner/bnr1.jpg) no-repeat center;
+}
+.g-bnr .pic2 {
+    z-index: -1;
+    background: url(../img/banner/bnr2.jpg) no-repeat center;
+}
+.g-bnr .pic3 {
+    z-index: -2;
+    background: url(../img/banner/bnr3.jpg) no-repeat center;
+}
+.g-bnr .u-slide {
+    position: absolute;
+    bottom: 20px;
+    z-index: 9;
+    width: 100%;
+    line-height: 0;
+    text-align: center;
+}
+.u-slide .sldptr {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 11px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.u-slide .z-crt {
+    background-color: #333;
+}

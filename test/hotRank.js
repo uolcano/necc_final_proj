@@ -16,7 +16,7 @@ function shiftHotRank(htRkElm) {
         // console.log(pos);
         cnt--;
         if (cnt > 0) {
-            setTimeout(arguments.callee, tmIntvl)
+            setTimeout(arguments.callee, tmIntvl);
         } else {
 	        htRkElm.appendChild(htRkElm.children[0]);
 	        pos = parseFloat(getStyle(htRkElm).bottom) || 0;

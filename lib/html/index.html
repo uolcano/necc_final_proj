@@ -10,10 +10,13 @@
 	<meta name="robots" content="index">
 	<title>网易教育产品部 - 优秀的实用技能学习平台</title>
 	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/grid.css">
 	<!--[if lte IE 8]>
-		<script src="../lib/js/polyfill.min.js"></script>
+		<script src="../../mod/polyfill.min.js"></script>
 	<![endif]-->
-	<script src="../lib/js/CookieUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/CookieUtil.js"></script>
+	<script src="../js/compat_set.js"></script>
+	<script src="../../mod/md5.min.js"></script>
 </head>
 <body>
 	<div class="g-topmsg j-topmsg">
@@ -22,6 +25,52 @@
 			<span class="msgcls u-cncl j-msgcls">不再提醒</span>
 		</div>
 	</div>
-	<script src="./topYellowBar.js" type="text/javascript" charset="utf-8"></script>
+	<div class="g-topinfo f-center f-fltclr">
+		<div class="u-logo">
+			<span class="en">EDU</span><span class="vbar"></span><span class="zh">网易教育产品部</span>
+		</div>
+		<div class="u-flw">
+			<span class="unflw u-btn j-flw">关注</span>
+			<span class="flwed" style="display:none;">
+				<span class="txt">已关注</span><span class="vbar"></span><span class="cncl u-cncl j-cncl">取消</span>
+			</span>
+			<span class="flwnum">45</span>
+		</div>
+		<ul class="u-nav">
+			<li class="u-lnk"><a href="http://open.163.com/">网易公开课</a></li>
+			<li class="u-lnk"><a href="http://study.163.com/">云课堂</a></li>
+			<li class="u-lnk"><a href="http://www.icourse163.org/">中国大学MOOC</a></li>
+			<li class="srch u-lnk"></li>
+		</ul>
+	</div>
+	<div class="g-bnr j-bnr">
+		<div class="bnr pic1"><a href="http://open.163.com/" class="u-lnk"></a></div>
+		<div class="bnr pic2"><a href="http://study.163.com/" class="u-lnk"></a></div>
+		<div class="bnr pic3"><a href="http://www.icourse163.org/" class="u-lnk"></a></div>
+		<div class="u-slide j-slide">
+			<i class="sldptr sld1 z-crt"></i><i class="sldptr sld2"></i><i class="sldptr sld3"></i>
+		</div>
+	</div>
+
+	
+	<div class="m-login j-mlogin" style="display:none;">
+		<div class="u-mask">&nbsp;</div>
+		<div class="login u-fxwin">
+			<iframe src="" frameborder="0" name="iframe" class="u-ifm" style="display:none;"></iframe>
+			<form class="flogin j-flogin" name="flogin" action="http://study.163.com/webDev/login.htm"
+			 method="get" target="iframe">
+				<input type="hidden" name="userName" /><input type="hidden" name="password" />
+			</form>
+			<h1 class="title">登录网易云课堂</h1>
+			<div class="errmsg j-errmsg" style="visibility:hidden;">错误信息提示</div>
+			<div class="u-txt"><input type="text" id="username" class="txt j-username" /><label for="username" class="u-placeholder">帐号</label></div>
+			<div class="u-txt"><input type="password" id="password" class="txt j-password" /><label for="password" class="u-placeholder">密码</label></div>
+			<button class="submit u-btn j-submit">登录</button>
+			<div class="u-cncl j-cnclicon"></div>
+		</div>
+	</div>
+	<script src="../js/compat_set.js" charset="utf-8"></script>
+	<script src="../js/communicate_set.js" charset="utf-8"></script>
+	<script src="../js/master.js" charset="utf-8"></script>
 </body>
 </html>

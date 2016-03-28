@@ -252,7 +252,6 @@ var ptnKvSub = /\s([a-zA-Z\-]+)\s*=\s*[\'\"](.*?\$\{track\.(.+?)\}.*?)[\'\"]/;
 function loadRank() {
     var url = 'http://study.163.com/webDev/hotcouresByCategory.htm';
 
-    // 简化版数据查询，不兼容IE的跨域
     function qryData(url, options) {
         var query = url + ((typeof options === 'string' && options.length > 0) ? ('?' + options) : '');
         var xhr = new XMLHttpRequest();
@@ -269,7 +268,7 @@ function loadRank() {
         }
         xhr.onload = function(event) {
             loadData(tmpNodeObj[1], hotRank, JSON.parse(xhr.responseText));
-        }
+        };
         xhr.open('get', query);
         xhr.send(null);
     }
