@@ -10,7 +10,7 @@ body {
 @media screen and (min-width:1611px) {
     .f-center {
         display: table;
-        min-width: 1205px;
+        width: 1205px;
         margin: 0 auto;
     }
 }
@@ -71,6 +71,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 9;
     background-color: #000;
     opacity: 0.8;
     filter: alpha(opacity=80);
@@ -86,9 +87,20 @@ body {
     z-index: 9;
     background-color: #fff;
 }
+/**
+ * unit: hover效果
+ */
+.u-hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.u-hover:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
 /* end */
 
-/* 顶部信息条 */
+/* start->顶部信息条 */
 .g-topmsg {
     background-color: #f3f3f3;
 }
@@ -118,10 +130,10 @@ body {
     height: 9px;
     background: url(../img/sprites/sprites.png) no-repeat -123px -101px;
 }
-/* end */
+/* ->end */
 
 
-/* 顶部综合信息栏 */
+/* start->顶部综合信息栏 */
 /**
  * layout: 顶部综合信息栏布局
  */
@@ -309,40 +321,42 @@ body {
     font: 16px/1.75 "Microsoft YaHei", monospace;
     color: #ccc;
 }
-/* end */
+/* ->end */
 
-
-/* 轮播图 */
-.g-bnr {
+/* start->轮播图 */
+/**
+ * module: 轮播图
+ */
+.m-slide {
     position: relative;
     width: 100%;
     height: 460px;
     overflow: hidden;
-    /* background-color: #ccc; */
 }
-.g-bnr .bnr {
+.m-slide .sld {
     position: absolute;
     top: 0;
     width: 100%;
     line-height: 0;
 }
-.g-bnr .bnr .u-lnk {
+.m-slide .sld .u-lnk {
     width: 100%;
     height: 460px;
 }
-.g-bnr .pic1 {
+.m-slide .pic1 {
     z-index: 1;
     background: url(../img/banner/bnr1.jpg) no-repeat center;
 }
-.g-bnr .pic2 {
+.m-slide .pic2 {
     z-index: -1;
     background: url(../img/banner/bnr2.jpg) no-repeat center;
 }
-.g-bnr .pic3 {
+.m-slide .pic3 {
     z-index: -2;
     background: url(../img/banner/bnr3.jpg) no-repeat center;
 }
-.g-bnr .u-slide {
+/* 滑块指示器 */
+.m-slide .u-sldptrs {
     position: absolute;
     bottom: 20px;
     z-index: 9;
@@ -350,7 +364,7 @@ body {
     line-height: 0;
     text-align: center;
 }
-.u-slide .sldptr {
+.u-sldptrs .sldptr {
     display: inline-block;
     width: 10px;
     height: 10px;
@@ -358,6 +372,361 @@ body {
     border-radius: 50%;
     background-color: #fff;
 }
-.u-slide .z-crt {
+.u-sldptrs .suz-crt {
     background-color: #333;
 }
+/* ->end */
+
+/* start->产品介绍 */
+.g-prod {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+/**
+ * module: 产品介绍
+ */
+.m-3prod {
+    margin-right: -123px;/* 修正右边padding的80px */
+}
+.m-3prod>* {
+    float: left;
+    width: 33.33%;
+}
+.m-3prod .open .u-icon {
+    background: url(../img/sprites/3product.png) 0 0;
+}
+.m-3prod .cloud .u-icon {
+    background: url(../img/sprites/3product.png) 0 -81px;
+}
+.m-3prod .mooc .u-icon {
+    background: url(../img/sprites/3product.png) 0 -162px;
+}
+.m-3prod .u-icon {
+    float: left;
+    margin-top: 6px;
+    width: 80px;
+    height: 80px;
+}
+.m-3prod .u-txt {
+    overflow: hidden;
+    padding-right: 80px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", monospace;
+}
+.m-3prod .title {
+    font-size: 22px;
+    line-height: 2;
+}
+.m-3prod .descrb, .m-3prod .lnk {
+    color: #666;
+    font-size: 14px;
+}
+.m-3prod .lnk {
+    color: #39a030;
+}
+.m-3prod .lnk:hover {
+    text-decoration: underline;
+}
+/* ->end */
+
+/* 背景色变更 */
+.g-bgc {
+    width: 100%;
+    overflow: hidden;/* 隐藏超出工作环境图片 */
+    background-color: #f8f8f8;
+}
+
+/* start->工作环境 */
+.g-wkenvi {
+    width: 200%;/* 解决图片区总体居中 */
+    height: 220px;
+    margin: 0 -50% 80px;/* 解决图片区总体居中 */
+    overflow: hidden;
+}
+/**
+ * modules: 工作环境介绍图片
+ */
+.m-wkenvi {
+    width: 1616px;
+    margin: 0 auto;
+    /* margin: 0 calc((100% - 1616px) / 2); */    /* calc()只兼容IE9+ */
+    line-height: 0;
+}
+.m-wkenvi .pic1 {
+    background: url(../img/work_envi/we1.jpg) no-repeat center;
+}
+.m-wkenvi .pic2 {
+    background: url(../img/work_envi/we2.jpg) no-repeat center;
+}
+.m-wkenvi .pic3 {
+    background: url(../img/work_envi/we3.jpg) no-repeat center;
+}
+.m-wkenvi .pic4 {
+    background: url(../img/work_envi/we4.jpg) no-repeat center;
+}
+.m-wkenvi .pic5 {
+    background: url(../img/work_envi/we5.jpg) no-repeat center;
+}
+.m-wkenvi .imgctnr {
+    float: left;
+    width: 320px;
+    height: 220px;
+    background-color: #a0a0ec;
+    line-height: 0;
+    overflow: hidden;
+}
+.m-wkenvi .imgctnr+.imgctnr {
+    margin-left: 4px;
+}
+
+/* 课程信息 */
+/**
+ * 在不另外使用.u-popup情况下，使得HTML结构的冗余得到解决
+ * 从orgIntro_video.css的1~219行代码优化而来
+ * 在ajax动态生成课程卡片内容时，可以减少冗余结构的处理
+ */
+
+/**
+ * layout: 主介绍内容区
+ */
+.g-intros {
+    font-family: "Microsoft YaHei", monospace;
+}
+.g-intros .g-main {
+    float: left;
+}
+.g-intros .g-side {
+    float: right;
+}
+/* 超出显示省略号 */
+.g-intros .crsname,
+.g-intros .categ,
+.g-intros .lrncnt,
+.g-intros .price,
+.g-intros .provdr,
+.g-intros .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* 学习人数前的图标 */
+.g-intros .lrncnt:before {
+    content: '';
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+    background: url(../img/sprites/sprites.png) no-repeat -170px -88px;
+}
+.g-intros .crsname, .g-intros .title {
+    font-weight: 400;
+}
+
+/**
+ * layout: 课程内容区
+ */
+.g-main .u-tabs, .g-main .m-crscards {
+    float: left;
+}
+.g-main .m-pgselr {
+    float: right;
+    margin: 30px 20px 0 0;
+}
+
+/**
+ * unit: tab标签集
+ */
+.u-tabs {
+    margin: 0 0 30px 0;
+    box-shadow: 0 1px 1px 1px #d4d3d3;
+}
+.u-tabs .tab {
+    float: left;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    color: #666;
+    background-color: #fff;
+}
+.u-tabs .tuz-crt {
+    color: #fff;
+    background-color: #39a030;
+}
+
+/**
+ * module: 课程卡片组
+ */
+.m-crscards {
+    margin: -10px;/* 处理靠近四边的卡片多出来的10px外边距 */
+    width: 100%;
+}
+/**
+ * unit: 课程卡
+ */
+.u-card {
+    float: left;
+    box-sizing: border-box;
+    width: 225px;
+    height: 228px;
+    margin: 10px;/* 每张卡片外边距10px */
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 1;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 1px #e6e6e6;
+}
+.u-card .lnk {
+    width: 100%;
+    height: 100%;
+}
+.u-card .pic {
+    width: 223px;
+    height: 124px;
+    margin: 1px 0 0 -4px;
+    background-color: #acf;
+}
+.u-card .crsname {
+    margin: 10px 0 0 0;
+}
+.u-card .categ {
+    margin: 10px 0 0 0;
+    color: #999;
+}
+.u-card .lrncnt {
+    display: inline-block;
+    margin: 10px 0 0 0;
+    padding: 3px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    color: #999;
+}
+.u-card .price {
+    margin: 8px 0 0 0;
+    color: #ff3f00;
+}
+.u-card .price:before {
+    content: '￥';
+}
+.u-card .provdr, .u-card .descrip {
+    display: none;
+}
+/* 调整卡片结构显示浮层 */
+.u-card:hover * {
+    font-size: 12px;
+    color: #666;
+}
+.u-card:hover .lnk {
+    position: relative;/* 作为.categ的参考父容器 */
+    box-sizing: border-box;
+    width: 481px;
+    height: auto;
+    margin: -10px -236px -200px -15px;
+    padding: 0;
+    min-height: 238px;
+    z-index: 1;
+    letter-spacing: 1px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 1px rgba(12, 4, 8, 0.5);
+}
+.u-card:hover .pic {
+    float: left;
+    margin: 11px 19px 0 11px;
+}
+.u-card:hover .crsname {
+    margin: 15px 10px 0 0;
+    font-size: 18px;
+}
+.u-card:hover .lrncnt {
+    margin: 0;
+    padding: 17px 0 0 4px;
+    border: none;
+}
+.u-card:hover .lrncnt:after {
+    content: '人在学';
+}
+.u-card:hover .price {
+    display: none;
+}
+.u-card:hover .categ {
+    position: absolute;
+    top: 87px;
+    left: 252px;
+    margin: 0;
+    padding: 13px 0 0 4px;
+}
+.u-card:hover .provdr {
+    display: block;
+    padding: 13px 0 0 4px;
+}
+.u-card:hover .provdr:before {
+    content: '发布者：';
+}
+.u-card:hover .categ:before {
+    content: '分类：';
+}
+.u-card:hover .descrip {
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 84px;
+    margin: 20px 0 0 0;
+    padding: 21px;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #f8f8f8;
+}
+/**
+ * module: 选页器
+ */
+.m-pgselr .page {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.m-pgselr .page:hover {
+    color: #fff;
+    background-color: #9dd8b1;
+}
+.m-pgselr .prev, .m-pgselr .next {
+    width: 30px;
+    height: 20px;
+    background: url(../img/sprites/sprites.png) no-repeat -62px -50px;
+}
+.m-pgselr .next {
+    background-position: -62px -70px;
+}
+.m-pgselr .tuz-crt {
+    color: #39a303;
+}
+/**
+ * status: 按钮效果
+ */
+.tuz-unclk {
+    box-shadow: 1px 1px 1px 1px #a6a6a6;
+}
+.tuz-clked {
+    box-shadow: inset 1px 1px 2px 1px #a6a6a6;
+}
+
+
+
+
+
+@media screen and (max-width: 1611px) {
+    .g-main {
+        width: 735px;
+    }
+}
+@media screen and (min-width: 1612px) {
+    .g-main {
+        width: 980px;
+    }
+}
+
