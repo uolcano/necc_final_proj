@@ -168,10 +168,10 @@ addHandler(window, 'load', function() {
 
         // 隐藏和显示控制条
         function ctrlBarHid(event) {
-            VideoUtil.ctrlBarHidden(event);
+            VideoUtil.panelHidden(event);
         }
         function ctrlBarShw(event) {
-            VideoUtil.ctrlBarShow(event);
+            VideoUtil.panelShow(event);
         }
         try {
             addHandler(ctrlBar, 'mouseenter', ctrlBarHid);

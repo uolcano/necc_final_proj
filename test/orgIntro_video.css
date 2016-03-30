@@ -421,7 +421,7 @@
 	width: 14px;
 	height: 14px;
 	border-top: 7px solid transparent;
-	border-right: 0px solid;
+	border-right: 0 solid;
 	border-bottom: 7px solid transparent;
 	border-left: 14px solid #999;
 }

@@ -156,6 +156,11 @@ function createDomStruct(tmpltElm, baseNode, childNum) {
     return nodes; // return the template node object
 }
 
+
+var ptnTxt = />\s*\$\{track\.(.+?)\}\s*</;
+var ptnKv = /([a-zA-Z\-]+)\s*=\s*[\'\"].*\$\{track\.(.+?)\}.*[\'\"]/;
+var ptnKvSub = /\s([a-zA-Z\-]+)\s*=\s*[\'\"](.*?\$\{track\.(.+?)\}.*?)[\'\"]/;
+
 function wtNodeAttr(tmpNode, domNode, item, matches) {
     for (var i = 0, len = tmpNode.attrs.length; i < len; i++) {
         if (tmpNode.attrs[i].name === matches[1]) {
@@ -212,7 +217,7 @@ function matchData(tmpNode, domNode, item) {
 }
 // 模板映射节点对象和DOM节点同步迭代，以ajax返回数据更新DOM节点的数据
 function dbNodeTravl(tmpNode, domNode, item) {
-        matchData(tmpNode, domNode, item);
+    matchData(tmpNode, domNode, item);
     // }
     for (var i = 0, len = tmpNode.subTree.length; i < len; i++) {
         matchData(tmpNode.subTree[i], domNode.children[i], item);
@@ -241,13 +246,17 @@ loadPgSelr.isFirstLoad = !0; // 加载页面时，首次默认加载选页器
 loadCrs();
 
 var hotRank = document.querySelector('.tuj-rank');
-tmpNodeObj.push(createDomStruct(tmplts[1], hotRank, 20));// 默认获取20个热门课程列表项的模板映射节点对象
+tmpNodeObj.push(createDomStruct(tmplts[1], hotRank, 20)); // 默认获取20个热门课程列表项的模板映射节点对象
 loadRank();
+console.log(tmpNodeObj);
 
-
-var ptnTxt = />\s*\$\{track\.(.+?)\}\s*</;
-var ptnKv = /([a-zA-Z\-]+)\s*=\s*[\'\"].*\$\{track\.(.+?)\}.*[\'\"]/;
-var ptnKvSub = /\s([a-zA-Z\-]+)\s*=\s*[\'\"](.*?\$\{track\.(.+?)\}.*?)[\'\"]/;
+var tabs = document.querySelector('.tuj-tabs');
+addHandler(tabs, 'click', clkTabLsnr);
+var pgSelr = document.querySelector('.tuj-pgselr');
+addHandler(pgSelr, 'click', clkPageLsnr);
+addHandler(pgSelr, 'click', switchPageLsnr);
+clkAnima(pgSelr);
+clkAnima(tabs);
 
 function loadRank() {
     var url = 'http://study.163.com/webDev/hotcouresByCategory.htm';
@@ -257,12 +266,12 @@ function loadRank() {
         var xhr = new XMLHttpRequest();
         try {
             xhr.open('get', query);
-        } catch(e1) {
+        } catch (e1) {
             try {
                 xhr = new XDomainRequest();
                 xhr.open('get', query);
                 console.log('create a cross-origin request for IE');
-            } catch(e2) {
+            } catch (e2) {
                 console.log('Error: create request unsuccessfully.', e2);
             }
         }
@@ -319,8 +328,6 @@ function clkTabLsnr(event) {
         }
     }
 }
-var tabs = document.querySelector('.tuj-tabs');
-addHandler(tabs, 'click', clkTabLsnr);
 
 // 加载选页器
 function loadPgSelr(pgSelrElm, response) {
@@ -359,8 +366,6 @@ function clkPageLsnr(event) {
         loadCrs();
     }
 }
-var pgSelr = document.querySelector('.tuj-pgselr');
-addHandler(pgSelr, 'click', clkPageLsnr);
 
 // 前一页和后一页按钮
 function refreshPageSelr(pgSelrElm, forwards) {
@@ -404,7 +409,6 @@ function switchPageLsnr(event) {
         console.log('not click the forward or back button');
     }
 }
-addHandler(pgSelr, 'click', switchPageLsnr);
 
 // 模拟按键效果
 function clkAnima(elm) {
@@ -431,8 +435,6 @@ function clkAnima(elm) {
     }
     addHandler(elm, 'mouseup', mouseUp);
 }
-clkAnima(pgSelr);
-clkAnima(tabs);
 
 
 // test snippet
