@@ -6,7 +6,6 @@
     font-family: "Hiragino Sans GB";
     src: url(../fonts/Hiragino Sans GB W3.ttf);
 }
-
 body {
     min-width: 1366px;
 }
@@ -451,7 +450,7 @@ body {
 /* 背景色变更 */
 .g-bgc {
     width: 100%;
-    overflow: hidden;/* 隐藏超出工作环境图片 */
+    overflow: hidden;/* 隐藏超出工作环境图片 */    
     background-color: #f8f8f8;
 }
 
@@ -502,7 +501,7 @@ body {
  * layout: 主介绍内容区
  */
 .g-intros {
-    margin-bottom: 120px;
+    padding-bottom: 120px;
     font-family: "Microsoft YaHei", monospace;
 }
 .g-intros .g-main {
@@ -649,7 +648,7 @@ body {
     margin: -10px -236px -200px -15px;
     padding: 0;
     min-height: 238px;
-    z-index: 1;
+    z-index: 9;
     letter-spacing: 1px;
     background-color: #fff;
     box-shadow: 0 1px 3px 1px rgba(12, 4, 8, 0.5);
