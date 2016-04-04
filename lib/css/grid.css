@@ -6,10 +6,19 @@
     font-family: "Hiragino Sans GB";
     src: url(../fonts/Hiragino Sans GB W3.ttf);
 }
-body {
-    min-width: 1366px;
+
+/* start->小功能集合 */
+/**
+ * function: 居中
+ */
+@media screen and (max-width:1382px) {
+    .f-center {
+        display: table;
+        width: 960px;
+        margin: 0 auto;
+    }
 }
-@media screen and (max-width:1611px) {
+@media screen and (min-width:1383px) and (max-width:1611px) {
     .f-center {
         min-width: 960px;
         margin: 0 203px;
@@ -22,8 +31,6 @@ body {
         margin: 0 auto;
     }
 }
-
-/* start->小功能集合 */
 /**
  * function: 清除浮动
  */
@@ -396,6 +403,7 @@ body {
 
 /* start->产品介绍 */
 .g-prod {
+    overflow: hidden;
     margin-top: 60px;
     margin-bottom: 60px;
 }
@@ -403,7 +411,7 @@ body {
  * module: 产品介绍
  */
 .m-3prod {
-    margin-right: -123px;/* 修正右边padding的80px */
+    margin-right: -80px;/* 修正右边padding的80px */
 }
 .m-3prod>* {
     float: left;
@@ -1093,7 +1101,7 @@ body {
 /* 一级声波图标 */
 .vuj-sndvlm .vui-sndvw1 {
     display: none;
-    left: -1px;
+    left: -6px;
     width: 4px;
     height: 8px;
     border-radius: 0 5px 5px 0 / 0 10px 10px 0;
@@ -1102,6 +1110,7 @@ body {
 /* 二级声波图标 */
 .vuj-sndvlm .vui-sndvw2 {
     display: none;
+    left: -10px;
     width: 4px;
     height: 16px;
     border-radius: 0 5px 5px 0 / 0 10px 10px 0;
@@ -1131,8 +1140,8 @@ body {
 .vuj-sndvlm .vuj-sndbar {
     display: none;/* 隐藏声音控制条，配合后面的hover展开控制条 */
     position: absolute;
-    bottom: 20px;
-    left: 15px;
+    bottom: 25px;
+    left: 13px;
     width: 10px;
     height: 100px;
     border: 2px solid #888;

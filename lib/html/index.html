@@ -15,8 +15,6 @@
     <!--[if lte IE 8]>
         <script src="../../mod/polyfill.min.js"></script>
     <![endif]-->
-    <script src="../js/CookieUtil.js"></script>
-    <script src="../js/compat_set.js"></script>
     <script src="../../mod/md5.min.js"></script>
     <style title="IEresponsive">
     /* 与IE_response.js配合使用，用于解决IE8不支持媒体查询的问题 */
@@ -26,6 +24,7 @@
 </head>
 
 <body>
+    <!-- 课程卡片模板 -->
     <script class="tuj-tmplt" data-tmplt-name="crsInfo" type="text/template">
         <div class="u-card" data-crsid="${track.id}">
             <a class="lnk u-lnk">
@@ -39,6 +38,7 @@
             </a>
         </div>
     </script>
+    <!-- 热门课程模板 -->
     <script class="tuj-tmplt" data-tmplt-name="hotRank" type="text/template">
         <li class="u-crsitm">
             <a class="u-lnk f-fltclr">
@@ -48,16 +48,20 @@
             </a>
         </li>
     </script>
+    <!-- 顶部通知条 -->
     <div class="g-topmsg j-topmsg">
         <div class="u-topmsg f-center f-fltclr">
             <span class="msg">网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！<a href=""class="lnk u-lnktrl">立即查看</a></span>
             <span class="msgcls u-cncl j-msgcls">不再提醒</span>
         </div>
     </div>
+    <!-- 顶部综合信息区 -->
     <div class="g-topinfo f-center f-fltclr">
+        <!-- 网易教育产品部logo -->
         <div class="u-logo">
             <span class="en">EDU</span><span class="vbar"></span><span class="zh">网易教育产品部</span>
         </div>
+        <!-- 关注及取消按钮 -->
         <div class="u-flw">
             <span class="unflw u-btn j-flw">关注</span>
             <span class="flwed" style="display:none;">
@@ -65,6 +69,7 @@
             </span>
             <span class="flwnum">45</span>
         </div>
+        <!-- 顶部右侧导航 -->
         <ul class="u-nav">
             <li class="u-lnk"><a href="http://open.163.com/">网易公开课</a></li>
             <li class="u-lnk"><a href="http://study.163.com/">云课堂</a></li>
@@ -72,6 +77,7 @@
             <li class="srch u-lnk"></li>
         </ul>
     </div>
+    <!-- 轮播图 -->
     <div class="m-slide suj-slide">
         <div class="sld pic1">
             <a href="http://open.163.com/" class="u-lnk"></a>
@@ -86,11 +92,12 @@
             <i class="sldptr ptr1 suz-crt"></i><i class="sldptr ptr2"></i><i class="sldptr ptr3"></i>
         </div>
     </div>
+    <!-- 网易教育产品 -->
     <div class="g-prod f-center">
         <div class="m-3prod f-fltclr">
             <div class="open">
                 <div class="u-icon"></div>
-                <div class="g-intro u-txt">
+                <div class="u-txt">
                     <h1 class="title f-elps">网易公开课</h1>
                     <p class="descrb">推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。</p>
                     <a href="http://open.163.com/" class="lnk u-lnktrl f-lnktrl">了解更多</a>
@@ -98,7 +105,7 @@
             </div>
             <div class="cloud">
                 <div class="u-icon"></div>
-                <div class="g-intro u-txt">
+                <div class="u-txt">
                     <h1 class="title f-elps">云课堂</h1>
                     <p class="descrb">网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程,创新的个性化学习体验，自由开放的交流互动环境。</p>
                     <a href="http://study.163.com/" class="lnk u-lnktrl f-lnktrl">了解更多</a>
@@ -106,7 +113,7 @@
             </div>
             <div class="mooc">
                 <div class="u-icon"></div>
-                <div class="g-intro u-txt">
+                <div class="u-txt">
                     <h1 class="title f-elps">中国大学MOOC</h1>
                     <p class="descrb">是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人,都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</p>
                     <a href="http://www.icourse163.org/" class="lnk u-lnktrl f-lnktrl">了解更多</a>
@@ -114,7 +121,9 @@
             </div>
         </div>
     </div>
+    <!-- 背景色变更 -->
     <div class="g-bgc">
+        <!-- 工作环境 -->
         <div class="g-wkenvi">
             <div class="m-wkenvi f-fltclr">
                 <div class="imgctnr pic1"></div>
@@ -125,11 +134,14 @@
             </div>
         </div>
         <div class="g-intros f-center f-fltclr">
+            <!-- 左侧内容区 -->
             <div class="g-main">
+                <!-- tab切换 -->
                 <div class="u-tabs tuj-tabs j-tabs">
                     <div class="tab tuz-crt z-crt" data-type="10">产品设计</div>
                     <div class="tab" data-type="20">编程语言</div>
                 </div>
+                <!-- 课程详情 -->
                 <div class="m-crscards tuj-cards j-crscards" data-cards-num="20"></div>
                 <div class="m-pgselr tuj-pgselr j-pgselr">
                     <div class="page prev"></div>
@@ -144,7 +156,9 @@
                     <div class="page next"></div>
                 </div>
             </div>
+            <!-- 右侧介绍 -->
             <div class="g-side">
+                <!-- 机构介绍 -->
                 <div class="m-orgintro">
                     <h1 class="title">机构介绍</h1>
                     <div class="detail">观看下面的视频来了解吧：
@@ -153,6 +167,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 热门排行 -->
                 <div class="m-rank">
                     <h1 class="title">最热排行</h1>
                     <div class="rank">
@@ -166,6 +181,7 @@
             </div>
         </div>
     </div>
+    <!-- 顶部信息区 -->
     <div class="g-ft">
         <div class="g-ftinfo f-center f-fltclr">
             <div class="logo">
@@ -206,8 +222,11 @@
             </div>
         </div>
     </div>
+    <!-- 登录模块 -->
     <div class="m-login j-mlogin" style="display:none;">
+        <!-- 登录遮罩 -->
         <div class="u-mask">&nbsp;</div>
+        <!-- 登录窗 -->
         <div class="login u-fxwin">
             <iframe src="" frameborder="0" name="iframe" class="u-ifm" style="display:none;"></iframe>
             <h1 class="title">登录网易云课堂</h1>
@@ -224,8 +243,11 @@
             <div class="u-cncl j-cnclicon"></div>
         </div>
     </div>
+    <!-- 视频模块 -->
     <div class="m-popvideo" style="display:none;">
+        <!-- 视频遮罩 -->
         <div class="u-mask"></div>
+        <!-- 视频展示窗 -->
         <div class="u-fxwin j-fxwin">
             <div class="title">请观看下面视频</div>
             <div class="u-cncl u-hover j-clsvideo"></div>
@@ -268,6 +290,7 @@
             </div>
         </div>
     </div>
+    <!-- 注意JS文件加载顺序，部分文件有依赖关系 -->
     <script src="../js/compat_set.js" charset="utf-8"></script>
     <script src="../js/communicate_set.js" charset="utf-8"></script>
     <script src="../js/SliderUtil.js" charset="utf-8"></script>
