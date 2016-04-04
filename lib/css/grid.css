@@ -6,7 +6,9 @@
     font-family: "Hiragino Sans GB";
     src: url(../fonts/Hiragino Sans GB W3.ttf);
 }
-
+body {
+    min-width: 960px;
+}
 /* start->小功能集合 */
 /**
  * function: 居中

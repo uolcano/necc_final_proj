@@ -6,7 +6,9 @@
     font-family: "Hiragino Sans GB";
     src: url(../fonts/Hiragino Sans GB W3.ttf);
 }
-
+body {
+    min-width: 960px;/* 防止小屏时展示的内容被隐藏 */
+}
 /* start->小功能集合 */
 /**
  * function: 居中
@@ -1091,11 +1093,11 @@
     content: '';
     display: inline-block;
     position: relative;
-    top: -8px;
+    top: -7px;
     left: -2px;
     box-sizing: border-box;
     width: 4px;
-    height: 8px;
+    height: 9px;
     border: 3px solid #999;
 }
 /* 一级声波图标 */
