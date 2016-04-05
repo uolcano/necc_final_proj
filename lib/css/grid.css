@@ -231,6 +231,7 @@ body {
     background: url(../img/sprites/sprites.png) no-repeat -123px -91px;
 }
 .u-flw .vbar {
+    display: inline-block;
     margin: 0 8px 0 9px;
     width: 1px;
     height: 10px;
